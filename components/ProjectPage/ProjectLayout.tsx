@@ -107,26 +107,22 @@ function ProjectLayout({ name }: Props): ReactElement {
             <Text>{project?.description}</Text>
             <ButtonGroup colorScheme="teal" mt="2rem">
               {project?.github && (
-                <Button leftIcon={<FiGithub />}>
-                  <a
-                    href={project?.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Github
-                  </a>
-                </Button>
+                <a
+                  href={project?.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button leftIcon={<FiGithub />}>Github</Button>
+                </a>
               )}
               {project?.live && (
-                <Button leftIcon={<FiArrowUpRight />}>
-                  <a
-                    href={project?.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live
-                  </a>
-                </Button>
+                <a
+                  href={project?.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button leftIcon={<FiArrowUpRight />}>Live</Button>
+                </a>
               )}
             </ButtonGroup>
           </Box>
