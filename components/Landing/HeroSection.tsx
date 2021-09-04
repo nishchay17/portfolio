@@ -1,19 +1,10 @@
 import React, { ReactElement } from "react";
 import Image from "next/image";
 import { Box, Button, Flex, Heading, Text, Tooltip } from "@chakra-ui/react";
-import Lottie from "lottie-react";
+import { Img } from "@chakra-ui/image";
 
 import * as shapes from "../../public/animation/shape.json";
 import MotionBox from "../MotionBox";
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: shapes,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
 
 function HeroSection(): ReactElement {
   return (
@@ -127,16 +118,12 @@ function HeroSection(): ReactElement {
           </MotionBox>
         </MotionBox>
       </Box>
-
-      <Box
-        userSelect="none"
-        width="40%"
-        height="90%"
+      <Img
+        width="30%"
+        draggable={false}
         display={["none", "none", "block"]}
-        bg="teal.100"
-      >
-        {/* <Lottie animationData={shapes} /> */}
-      </Box>
+        src="/img/hero.png"
+      />
     </Flex>
   );
 }
