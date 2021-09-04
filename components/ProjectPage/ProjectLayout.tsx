@@ -38,35 +38,47 @@ function ProjectLayout({ name }: Props): ReactElement {
         justifyContent="space-between"
         flexDirection={["column", "row"]}
       >
-        <Button variant="link" colorScheme="teal" leftIcon={<FiChevronLeft />}>
-          <Link href="/#project">
-            <a>Back</a>
-          </Link>
-        </Button>
+        <Link href="/#project">
+          <a>
+            <Button
+              variant="link"
+              colorScheme="teal"
+              leftIcon={<FiChevronLeft />}
+            >
+              Back
+            </Button>
+          </a>
+        </Link>
+
         <Flex mt={["0.5rem", 0]} flexDirection={["column", "row"]}>
-          <Button colorScheme="teal" leftIcon={<FiChevronLeft />}>
-            <Link
-              href={
-                ProjectLists[
-                  (currentIndex + ProjectLists.length - 1) % ProjectLists.length
-                ].id
-              }
-            >
-              <a>Previous Project</a>
-            </Link>
-          </Button>
-          <Button
-            colorScheme="teal"
-            rightIcon={<FiChevronRight />}
-            mt={["0.5rem", 0]}
-            ml={[0, "0.5rem"]}
+          <Link
+            href={
+              ProjectLists[
+                (currentIndex + ProjectLists.length - 1) % ProjectLists.length
+              ].id
+            }
           >
-            <Link
-              href={ProjectLists[(currentIndex + 1) % ProjectLists.length].id}
-            >
-              <a>Next Project</a>
-            </Link>
-          </Button>
+            <a>
+              <Button colorScheme="teal" leftIcon={<FiChevronLeft />}>
+                Previous Project
+              </Button>
+            </a>
+          </Link>
+
+          <Link
+            href={ProjectLists[(currentIndex + 1) % ProjectLists.length].id}
+          >
+            <a>
+              <Button
+                colorScheme="teal"
+                rightIcon={<FiChevronRight />}
+                mt={["0.5rem", 0]}
+                ml={[0, "0.5rem"]}
+              >
+                Next Project
+              </Button>
+            </a>
+          </Link>
         </Flex>
       </Flex>
       <Flex

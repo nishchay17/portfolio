@@ -50,53 +50,55 @@ function HeroSection(): ReactElement {
         </MotionBox>
         <Flex mt="2rem" flexDirection={["column", "row"]}>
           <Tooltip label="Download me 🚀">
-            <Button
+            <a
+              href={process.env.NEXT_PUBLIC_RESUME}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                isFullWidth={false}
+                colorScheme="teal"
+                leftIcon={
+                  <Image
+                    width={20}
+                    height={20}
+                    alt="download"
+                    draggable={false}
+                    src="/svg/download.svg"
+                  />
+                }
+              >
+                Download Resume
+              </Button>
+            </a>
+          </Tooltip>
+          <a href="mailto:nishchay13971@gmail.com">
+            <MotionBox
+              as={Button}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              whileHover={{
+                scale: 1.03,
+                transition: { duration: 0.1 },
+              }}
               isFullWidth={false}
-              colorScheme="teal"
               leftIcon={
                 <Image
                   width={20}
                   height={20}
-                  alt="download"
+                  alt="mail"
                   draggable={false}
-                  src="/svg/download.svg"
+                  src="/svg/mail.svg"
                 />
               }
+              colorScheme="teal"
+              variant="outline"
+              ml={[0, "1rem"]}
+              mt={["1rem", 0]}
             >
-              <a
-                href={process.env.NEXT_PUBLIC_RESUME}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download Resume
-              </a>
-            </Button>
-          </Tooltip>
-          <MotionBox
-            as={Button}
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            whileHover={{
-              scale: 1.03,
-              transition: { duration: 0.1 },
-            }}
-            isFullWidth={false}
-            leftIcon={
-              <Image
-                width={20}
-                height={20}
-                alt="mail"
-                draggable={false}
-                src="/svg/mail.svg"
-              />
-            }
-            colorScheme="teal"
-            variant="outline"
-            ml={[0, "1rem"]}
-            mt={["1rem", 0]}
-          >
-            <a href="mailto:nishchay13971@gmail.com">Get In Touch</a>
-          </MotionBox>
+              Get In Touch
+            </MotionBox>
+          </a>
         </Flex>
         <MotionBox
           initial={{ opacity: 0, y: -10 }}
