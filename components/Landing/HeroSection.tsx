@@ -118,7 +118,11 @@ function HeroSection(): ReactElement {
           </MotionBox>
         </MotionBox>
       </Box>
-      <Img
+      <MotionBox
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+        as={Img}
         width="30%"
         draggable={false}
         display={["none", "none", "block"]}
