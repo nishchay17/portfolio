@@ -98,7 +98,7 @@ function Projects(): ReactElement {
   }
 
   return (
-    <Box as="section" my="2rem" id="#project">
+    <Box as="section" my="2rem" id="projects">
       <Text fontSize="4xl" py="2rem">
         Projects
       </Text>
