@@ -38,7 +38,7 @@ function ProjectLayout({ name }: Props): ReactElement {
         justifyContent="space-between"
         flexDirection={["column", "row"]}
       >
-        <Link href="/#project">
+        <Link href="/">
           <a>
             <Button
               variant="link"
