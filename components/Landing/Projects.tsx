@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Image } from "@chakra-ui/image";
 import { Badge, Box, Flex, Grid, Text } from "@chakra-ui/layout";
@@ -11,7 +11,7 @@ import MotionBox from "../MotionBox";
 
 const container = {
   hidden: { opacity: 0 },
-  show: {
+  visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
@@ -23,7 +23,7 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0 },
 };
 
 function Projects(): ReactElement {
@@ -32,9 +32,8 @@ function Projects(): ReactElement {
   const [ref, inView] = useInView();
 
   useEffect(() => {
-    console.log(inView);
     if (inView) {
-      controls.start("show");
+      controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -99,7 +98,7 @@ function Projects(): ReactElement {
 
   return (
     <Box as="section" my="2rem" id="projects">
-      <Text fontSize="4xl" py="2rem">
+      <Text as="h3" fontSize="4xl" py="2rem">
         Projects
       </Text>
       <MotionBox

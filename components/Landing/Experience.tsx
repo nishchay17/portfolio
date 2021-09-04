@@ -2,12 +2,10 @@ import React, { ReactElement } from "react";
 import { Box, Flex, Text, List, ListItem, ListIcon } from "@chakra-ui/react";
 import { FiMinus } from "react-icons/fi";
 
-interface Props {}
-
-function Experience({}: Props): ReactElement {
+function Experience(): ReactElement {
   return (
     <Flex flexDirection="column" my="2rem" as="section">
-      <Text fontSize="4xl" py="2rem">
+      <Text as="h3" fontSize="4xl" py="2rem">
         Experience
       </Text>
 

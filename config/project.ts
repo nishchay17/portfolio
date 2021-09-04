@@ -22,6 +22,14 @@ export const ProjectLists: Project[] = [
     live: "https://theteestore.netlify.app/",
   },
   {
+    id: "portfolio",
+    name: "Portfolio",
+    description:
+      "Portfolio made with Next js with typescript and chakra UI, and added animations with framer motion.",
+    image: "/img/portfolio.png",
+    tag: ["Next js", "React", "Typescript", "Chakra UI"],
+  },
+  {
     id: "cdf-(cli)",
     name: "CDF (CLI)",
     description:

@@ -11,7 +11,9 @@ function Nav(): ReactElement {
           <Flex alignItems="center">
             <Text>
               <Link href="/">
-                <a>Nishchay</a>
+                <a>
+                  <h1>Nishchay</h1>
+                </a>
               </Link>
             </Text>
           </Flex>
