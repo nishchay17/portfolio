@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <Head>
         <meta name="description" content="Nishchay17 Portfolio" />
+        <meta name="theme-color" content="#469895" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
