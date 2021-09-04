@@ -17,6 +17,7 @@ const MotionBox = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   );
 });
 
+MotionBox.displayName = "MotionBox";
 // function MotionBox({ children, ...props }: Props): ReactElement {
 //   return <Motion {...props}>{children}</Motion>;
 // }
