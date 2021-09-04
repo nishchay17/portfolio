@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, ButtonGroup } from "@chakra-ui/button";
-import { Image } from "@chakra-ui/image";
+import { Img } from "@chakra-ui/react";
 import { Badge, Box, Container, Flex, Text } from "@chakra-ui/layout";
 import {
   FiArrowUpRight,
@@ -133,7 +133,8 @@ function ProjectLayout({ name }: Props): ReactElement {
         </Box>
         {project?.image && (
           <MotionBox
-            as={Image}
+            as={Img}
+            fallback={<Text>Loading Image...</Text>}
             layoutId={project?.id}
             draggable={false}
             borderRadius="7px"
