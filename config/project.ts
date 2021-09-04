@@ -44,7 +44,7 @@ export const ProjectLists: Project[] = [
     id: "trivia-game",
     name: "Trivia Game",
     description:
-      "Collaborate with Team with team collab. Assign and monitor tasks and share files with the team.",
+      "Trivia Game app with mobile first design, used Opent DB's API for fetching Questions.",
     image: "/img/trivia.png",
     tag: ["React"],
     github: "https://github.com/nishchay17/trivia",
