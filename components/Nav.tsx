@@ -8,14 +8,25 @@ function Nav(): ReactElement {
       <Box height="0.5rem" width="100%" bg="teal.500" />
       <Container maxW="container.xl" py="1rem">
         <nav>
-          <Flex alignItems="center">
-            <Text>
-              <Link href="/">
-                <a>
-                  <h1>Nishchay</h1>
-                </a>
-              </Link>
-            </Text>
+          <Flex alignItems="center" justifyContent="space-between">
+            <Link href="/">
+              <a>
+                <h1>Nishchay</h1>
+              </a>
+            </Link>
+            <Link href="/#projects">
+              <a>
+                <Text
+                  sx={{
+                    ":hover": {
+                      color: "teal.800",
+                    },
+                  }}
+                >
+                  Projects
+                </Text>
+              </a>
+            </Link>
           </Flex>
         </nav>
       </Container>

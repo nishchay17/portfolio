@@ -36,7 +36,7 @@ function Layout({
       initial="hidden"
       animate="enter"
       exit="exit"
-      transition={{ type: "linear" }}
+      transition={{ type: "linear", duration: 0.45 }}
     >
       <Head>
         <title>{title !== "" ? `Nishchay | ${title}` : "Nishchay"}</title>
