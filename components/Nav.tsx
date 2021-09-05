@@ -14,19 +14,37 @@ function Nav(): ReactElement {
                 <h1>Nishchay</h1>
               </a>
             </Link>
-            <Link href="/#projects">
-              <a>
+            <Flex>
+              <a
+                href="https://www.linkedin.com/in/nishchay-trivedi-61219978"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Text
                   sx={{
                     ":hover": {
                       color: "teal.800",
                     },
                   }}
+                  mr="1rem"
                 >
-                  Projects
+                  Linkedin
                 </Text>
               </a>
-            </Link>
+              <Link href="/#projects">
+                <a>
+                  <Text
+                    sx={{
+                      ":hover": {
+                        color: "teal.800",
+                      },
+                    }}
+                  >
+                    Projects
+                  </Text>
+                </a>
+              </Link>
+            </Flex>
           </Flex>
         </nav>
       </Container>
