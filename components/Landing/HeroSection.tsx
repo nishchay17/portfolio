@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Box, Button, Flex, Heading, Text, Tooltip } from "@chakra-ui/react";
 import { Img } from "@chakra-ui/image";
 
-import * as shapes from "../../public/animation/shape.json";
 import MotionBox from "../MotionBox";
+import { FiDownload, FiMail, FiArrowDown } from "react-icons/fi";
 
 function HeroSection(): ReactElement {
   return (
@@ -49,15 +49,7 @@ function HeroSection(): ReactElement {
               <Button
                 isFullWidth={false}
                 colorScheme="teal"
-                leftIcon={
-                  <Image
-                    width={20}
-                    height={20}
-                    alt="download"
-                    draggable={false}
-                    src="/svg/download.svg"
-                  />
-                }
+                leftIcon={<FiDownload size="1.2rem" />}
               >
                 Download Resume
               </Button>
@@ -73,15 +65,7 @@ function HeroSection(): ReactElement {
                 transition: { duration: 0.1 },
               }}
               isFullWidth={false}
-              leftIcon={
-                <Image
-                  width={20}
-                  height={20}
-                  alt="mail"
-                  draggable={false}
-                  src="/svg/mail.svg"
-                />
-              }
+              leftIcon={<FiMail size="1.2rem" />}
               colorScheme="teal"
               variant="outline"
               ml={[0, "1rem"]}
@@ -108,12 +92,7 @@ function HeroSection(): ReactElement {
             }}
           >
             <Box ml="0.5rem">
-              <Image
-                width={20}
-                height={20}
-                alt="scroll"
-                src="/svg/arrow-down.svg"
-              />
+              <FiArrowDown />
             </Box>
           </MotionBox>
         </MotionBox>

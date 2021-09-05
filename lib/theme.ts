@@ -1,4 +1,13 @@
-import { theme as chakraTheme, extendTheme } from "@chakra-ui/react";
+import {
+  theme as chakraTheme,
+  extendTheme,
+  ThemeConfig,
+} from "@chakra-ui/react";
+
+const config: ThemeConfig = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+};
 
 const fonts = {
   ...chakraTheme.fonts,
@@ -14,4 +23,4 @@ const components = {
   },
 };
 
-export const theme = extendTheme({ fonts, components });
+export const theme = extendTheme({ fonts, components, config });

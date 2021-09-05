@@ -1,9 +1,10 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Image } from "@chakra-ui/image";
 import { Badge, Box, Flex, Grid, Text } from "@chakra-ui/layout";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
+import { useColorMode } from "@chakra-ui/color-mode";
 
 import { Project } from "../../interface/Project";
 import { ProjectLists } from "../../config/project";
@@ -36,6 +37,7 @@ function ProjectCard({
   const routrer = useRouter();
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { colorMode } = useColorMode();
 
   useEffect(() => {
     if (inView) {
@@ -54,7 +56,7 @@ function ProjectCard({
       }
       cursor="pointer"
       width={"100%"}
-      bg="blackAlpha.800"
+      bg={colorMode === "dark" ? "gray.700" : "blackAlpha.800"}
       color="whiteAlpha.900"
       borderRadius="7px"
       p="1rem"
