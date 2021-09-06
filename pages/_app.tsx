@@ -16,6 +16,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="Nishchay17 Portfolio" />
         <meta name="theme-color" content="#469895" />
         <link rel="icon" href="/favicon.ico" />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HWRQ3ZDRMS"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-HWRQ3ZDRMS');
+	</script>
+
       </Head>
       <Nav />
       <AnimatePresence>
