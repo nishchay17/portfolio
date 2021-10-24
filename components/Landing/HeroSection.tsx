@@ -106,6 +106,7 @@ function HeroSection(): ReactElement {
       >
         <Image
           src="/img/hero.png"
+          alt="pattern"
           layout="responsive"
           sizes="100vh"
           height={450}
