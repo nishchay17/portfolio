@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import Link from "next/link";
 import { Box, Container, Flex, Text } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/color-mode";
-import { FiMoon, FiSun } from "react-icons/fi";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 function Nav(): ReactElement {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -18,7 +18,7 @@ function Nav(): ReactElement {
                 <h1>Nishchay</h1>
               </a>
             </Link>
-            <Flex alignContent="center">
+            <Flex alignItems="center">
               <a
                 href="https://www.linkedin.com/in/nishchay-trivedi-61219978"
                 target="_blank"
@@ -48,19 +48,7 @@ function Nav(): ReactElement {
                   </Text>
                 </a>
               </Link>
-
-              <Box
-                as="span"
-                userSelect="none"
-                onClick={toggleColorMode}
-                cursor="pointer"
-              >
-                {colorMode === "light" ? (
-                  <FiMoon size="1.5rem" />
-                ) : (
-                  <FiSun size="1.5rem" />
-                )}
-              </Box>
+              <ThemeToggleButton />
             </Flex>
           </Flex>
         </nav>

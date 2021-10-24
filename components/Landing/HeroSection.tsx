@@ -101,12 +101,18 @@ function HeroSection(): ReactElement {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}
-        as={Img}
-        width="30%"
-        draggable={false}
         display={["none", "none", "block"]}
-        src="/img/hero.png"
-      />
+        width="25vw"
+      >
+        <Image
+          src="/img/hero.png"
+          layout="responsive"
+          sizes="100vh"
+          height={450}
+          width={300}
+          draggable={false}
+        />
+      </MotionBox>
     </Flex>
   );
 }
