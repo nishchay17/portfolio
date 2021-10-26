@@ -49,7 +49,7 @@ function Login(): ReactElement {
         padding="1rem"
         templateRows="repeat(1, 1fr)"
         gap="1rem"
-        width={["100vw", "30vw"]}
+        width={["90vw", "30vw"]}
         borderRadius="lg"
       >
         <Heading size="lg" textAlign="center" my="1rem">
