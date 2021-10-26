@@ -1,7 +1,6 @@
 import React, { ReactElement } from "react";
 import Image from "next/image";
 import { Box, Button, Flex, Heading, Text, Tooltip } from "@chakra-ui/react";
-import { Img } from "@chakra-ui/image";
 
 import MotionBox from "../MotionBox";
 import { FiDownload, FiMail, FiArrowDown } from "react-icons/fi";

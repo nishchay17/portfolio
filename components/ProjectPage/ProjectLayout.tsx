@@ -1,35 +1,22 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement } from "react";
 import Link from "next/link";
 import { Button, ButtonGroup } from "@chakra-ui/button";
 import { Img } from "@chakra-ui/react";
 import { Badge, Box, Container, Flex, Text } from "@chakra-ui/layout";
-import {
-  FiArrowUpRight,
-  FiChevronLeft,
-  FiChevronRight,
-  FiGithub,
-} from "react-icons/fi";
+import { FiArrowUpRight, FiChevronLeft, FiGithub } from "react-icons/fi";
 
-import { ProjectLists } from "../../config/project";
 import { Project } from "../../interface/Project";
 import MotionBox from "../MotionBox";
-
+import { supabase } from "../../lib/supabase";
 interface Props {
-  name?: string;
+  project: Project;
 }
 
-function ProjectLayout({ name }: Props): ReactElement {
-  const [project, setProject] = useState<Project>();
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  useEffect(() => {
-    ProjectLists.map((data, index) => {
-      if (data.id == name) {
-        setProject(data);
-        setCurrentIndex(index);
-      }
-    });
-  }, [name]);
+function ProjectLayout({ project }: Props): ReactElement {
+  function getUrl(image: string): string | null {
+    const { publicURL } = supabase.storage.from("image").getPublicUrl(image);
+    return publicURL;
+  }
 
   return (
     <Container maxW="container.xl">
@@ -51,10 +38,10 @@ function ProjectLayout({ name }: Props): ReactElement {
         </Link>
 
         <Flex mt={["0.5rem", 0]} flexDirection={["column", "row"]}>
-          <Link
+          {/* <Link
             href={
               ProjectLists[
-                (currentIndex + ProjectLists.length - 1) % ProjectLists.length
+                (project.id + ProjectLists.length - 1) % ProjectLists.length
               ].id
             }
           >
@@ -65,9 +52,7 @@ function ProjectLayout({ name }: Props): ReactElement {
             </a>
           </Link>
 
-          <Link
-            href={ProjectLists[(currentIndex + 1) % ProjectLists.length].id}
-          >
+          <Link href={ProjectLists[(project.id + 1) % ProjectLists.length].id}>
             <a>
               <Button
                 colorScheme="teal"
@@ -78,7 +63,7 @@ function ProjectLayout({ name }: Props): ReactElement {
                 Next Project
               </Button>
             </a>
-          </Link>
+          </Link> */}
         </Flex>
       </Flex>
       <Flex
@@ -91,7 +76,7 @@ function ProjectLayout({ name }: Props): ReactElement {
             {project?.name}
           </Text>
           <Flex flexWrap="wrap">
-            {project?.tag.map((name, idx) => (
+            {project?.tag.split(" ").map((name, idx) => (
               <Badge
                 mt="0.3rem"
                 key={idx}
@@ -136,7 +121,7 @@ function ProjectLayout({ name }: Props): ReactElement {
             borderRadius="7px"
             border="0.2rem solid"
             borderColor="teal"
-            src={project?.image}
+            src={getUrl(project.image)}
             alt={project?.id}
             width={["100%", "100%", "50%"]}
             mb={["2rem", "2rem", 0]}

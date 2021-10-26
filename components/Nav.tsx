@@ -1,12 +1,10 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
 import { Box, Container, Flex, Text } from "@chakra-ui/react";
-import { useColorMode } from "@chakra-ui/color-mode";
+
 import ThemeToggleButton from "./ThemeToggleButton";
 
 function Nav(): ReactElement {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <>
       <Box height="0.5rem" width="100%" bg="teal.500" />

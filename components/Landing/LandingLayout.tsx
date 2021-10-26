@@ -6,13 +6,18 @@ import HeroSection from "./HeroSection";
 import Projects from "./Projects";
 import Tech from "./Tech";
 import Social from "./Social";
+import { Project } from "../../interface/Project";
 
-function LandingLayout(): ReactElement {
+interface Props {
+  projects: Project[];
+}
+
+function LandingLayout({ projects }: Props): ReactElement {
   return (
     <>
       <Container maxW="container.xl">
         <HeroSection />
-        <Projects />
+        <Projects projects={projects} />
         <Experience />
         <Tech />
       </Container>

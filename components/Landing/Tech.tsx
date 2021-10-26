@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import { Box, Text } from "@chakra-ui/layout";
 import { Grid } from "@chakra-ui/react";
-import MotionBox from "../MotionBox";
 
+import MotionBox from "../MotionBox";
 interface TechNameProp {
   name: string;
 }

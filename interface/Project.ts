@@ -5,5 +5,5 @@ export type Project = {
   image?: string;
   github?: string;
   live?: string;
-  tag: string[];
+  tag: string;
 };

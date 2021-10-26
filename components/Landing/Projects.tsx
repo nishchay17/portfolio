@@ -7,8 +7,8 @@ import { useAnimation } from "framer-motion";
 import { useColorMode } from "@chakra-ui/color-mode";
 
 import { Project } from "../../interface/Project";
-import { ProjectLists } from "../../config/project";
 import MotionBox from "../MotionBox";
+import { supabase } from "../../lib/supabase";
 
 const item = {
   visible: (i: number) => ({
@@ -44,6 +44,12 @@ function ProjectCard({
       controls.start("visible");
     }
   }, [controls, inView]);
+
+  function getUrl(image: string): string | null {
+    const { publicURL } = supabase.storage.from("image").getPublicUrl(image);
+    return publicURL;
+  }
+
   return (
     <MotionBox
       ref={ref}
@@ -51,9 +57,7 @@ function ProjectCard({
       animate={controls}
       variants={item}
       custom={index}
-      onClick={() =>
-        routrer.push(`/project/${name.toLowerCase().split(" ").join("-")}`)
-      }
+      onClick={() => routrer.push(`/project/${id}`)}
       cursor="pointer"
       width={"100%"}
       bg={colorMode === "dark" ? "gray.700" : "blackAlpha.800"}
@@ -70,7 +74,7 @@ function ProjectCard({
           initial={false}
           width="100%"
           height="auto"
-          src={image ? image : "/img/no-img.png"}
+          src={image ? getUrl(image) : "/img/no-img.png"}
         />
       </Box>
       <Flex flexDirection="column" justifyContent="space-between">
@@ -83,7 +87,7 @@ function ProjectCard({
           </Text>
         </Box>
         <Flex mt="1rem" flexWrap="wrap">
-          {tag.map((name, idx) => (
+          {tag.split(" ").map((name, idx) => (
             <Badge
               colorScheme="teal"
               size="0.7rem"
@@ -100,7 +104,11 @@ function ProjectCard({
   );
 }
 
-function Projects(): ReactElement {
+interface Props {
+  projects: Project[];
+}
+
+function Projects({ projects }: Props): ReactElement {
   return (
     <Box as="section" my="2rem" id="projects">
       <Text as="h3" fontSize="4xl" py="2rem">
@@ -115,7 +123,7 @@ function Projects(): ReactElement {
         ]}
         gap="0.5rem"
       >
-        {ProjectLists.map((data, idx) => (
+        {projects.map((data, idx) => (
           <ProjectCard key={data.id} index={idx} {...data} />
         ))}
       </Grid>
