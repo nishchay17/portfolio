@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 import Login from "../components/Admin/Login";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 
 function Admin(): ReactElement {
   return (

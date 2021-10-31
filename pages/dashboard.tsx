@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { GetServerSideProps } from "next";
 
 import DashboardLayout from "../components/Admin/Dashboard/DashboardLayout";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { supabase } from "../lib/supabase";
 import { Project } from "../interface/Project";
 

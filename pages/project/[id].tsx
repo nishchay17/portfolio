@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 
 import ProjectLayout from "../../components/ProjectPage/ProjectLayout";
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout";
 import Nav from "../../components/Nav";
 import { supabase } from "../../lib/supabase";
 import { Project as Pro } from "../../interface/Project";

@@ -2,8 +2,7 @@ import type { GetStaticProps } from "next";
 import { ReactElement } from "react";
 
 import LandingLayout from "../components/Landing/LandingLayout";
-import Layout from "../components/Layout";
-import Nav from "../components/Nav";
+import Layout from "../components/layout";
 import { Project } from "../interface/Project";
 import { supabase } from "../lib/supabase";
 
