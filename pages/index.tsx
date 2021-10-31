@@ -14,7 +14,6 @@ interface Props {
 function Home({ data }: Props): ReactElement {
   return (
     <Layout withAnimation={false}>
-      <Nav />
       <LandingLayout projects={data} />
     </Layout>
   );

@@ -1,13 +1,12 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
-import { Box, Container, Flex, Text } from "@chakra-ui/react";
+import { Container, Flex, Text } from "@chakra-ui/react";
 
 import ThemeToggleButton from "./ThemeToggleButton";
 
 function Nav(): ReactElement {
   return (
     <>
-      <Box height="0.5rem" width="100%" bg="teal.500" />
       <Container maxW="container.xl" py="1rem">
         <nav>
           <Flex alignItems="center" justifyContent="space-between">

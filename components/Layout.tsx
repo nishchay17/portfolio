@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 
 import MotionBox from "./MotionBox";
 import { supabase } from "../lib/supabase";
+import { Box } from "@chakra-ui/layout";
 interface Props {
   children: ReactElement[] | ReactElement;
   title: string;
@@ -65,6 +66,8 @@ function Layout({
           <Head>
             <title>{title !== "" ? `Nishchay | ${title}` : "Nishchay"}</title>
           </Head>
+          <Box height="0.5rem" width="100%" bg="teal.500" />
+
           <div>{children}</div>
         </MotionBox>
       )}
