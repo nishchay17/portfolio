@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
 import Image from "next/image";
 import { Box, Button, Flex, Heading, Text, Tooltip } from "@chakra-ui/react";
+import { FiDownload, FiMail, FiArrowDown } from "react-icons/fi";
 
 import MotionBox from "../MotionBox";
-import { FiDownload, FiMail, FiArrowDown } from "react-icons/fi";
 import Nav from "../Nav";
 
 function HeroSection(): ReactElement {
@@ -13,6 +13,7 @@ function HeroSection(): ReactElement {
       <Flex
         as="section"
         justifyContent="space-between"
+        height={["80%", "90%"]}
         alignItems={["flex-end", "center"]}
       >
         <Box>
@@ -103,7 +104,7 @@ function HeroSection(): ReactElement {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
           display={["none", "none", "block"]}
-          width="25vw"
+          width="clamp(300px,25vw, 350px)"
         >
           <Image
             src="/img/hero.png"
