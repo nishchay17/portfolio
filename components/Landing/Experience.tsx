@@ -35,7 +35,11 @@ function Experience(): ReactElement {
         </ListItem>
         <ListItem>
           <ListIcon as={FiMinus} color="green.500" />
-          Implemented Debouncing to reduce API calls up to 70%
+          Converted UI design to reusable, scalable react components
+        </ListItem>
+        <ListItem>
+          <ListIcon as={FiMinus} color="green.500" />
+          Implemented Debouncing to reduce API calls
         </ListItem>
       </List>
     </Flex>
