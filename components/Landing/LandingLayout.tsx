@@ -19,8 +19,8 @@ function LandingLayout({ projects }: Props): ReactElement {
         <HeroSection />
         <Projects projects={projects} />
         <Experience />
-        <Tech />
       </Container>
+      <Tech />
       <Social />
     </>
   );

@@ -1,50 +1,74 @@
 import React, { ReactElement } from "react";
-import { Box, Text } from "@chakra-ui/layout";
-import { Grid } from "@chakra-ui/react";
-
-import MotionBox from "../MotionBox";
+import { Box, Container, Flex, Text } from "@chakra-ui/layout";
+import { keyframes } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/color-mode";
 interface TechNameProp {
   name: string;
+  svg: string;
 }
 
+const slide = keyframes`
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-12rem * 8))}
+`;
+
 function Tech(): ReactElement {
-  function Techname({ name }: TechNameProp): ReactElement {
+  const slideAnimation = `${slide} 20s linear infinite`;
+  const { colorMode } = useColorMode();
+
+  function Techname({ name, svg }: TechNameProp): ReactElement {
     return (
-      <MotionBox
-        as={Box}
-        textAlign="center"
-        bg="blackAlpha.800"
-        p="1rem"
-        color="white"
-        borderRadius="7px"
-      >
-        <Text fontSize="1.2rem">{name}</Text>
-      </MotionBox>
+      <Box height={["12rem", "12rem"]} width="12rem">
+        <Flex
+          px="1.5rem"
+          justifyContent="center"
+          alignItems="center"
+          height="100%"
+        >
+          <img src={svg} title={name} />
+        </Flex>
+      </Box>
     );
   }
 
   return (
     <Box as="section" my="2rem">
-      <Text as="h3" fontSize="4xl" py="2rem">
-        Tech that I love
-      </Text>
-      <MotionBox
-        as={Grid}
-        templateColumns={[
-          "repeat(1, 1fr)",
-          "repeat(2, 1fr)",
-          "repeat(3, 1fr)",
-          "repeat(6, 1fr)",
-        ]}
-        gap="0.5rem"
+      <Container maxW="container.xl">
+        <Text as="h3" fontSize="4xl" py="2rem" lineHeight="110%">
+          Tech that I love and use
+        </Text>
+      </Container>
+      <Flex
+        id="slider"
+        bg={colorMode === "dark" ? "whiteAlpha.900" : "white"}
+        height={["12rem", "12rem"]}
+        overflow="hidden"
+        position="relative"
       >
-        <Techname name="Next js" />
-        <Techname name="React js" />
-        <Techname name="Chakra UI" />
-        <Techname name="Typescript" />
-        <Techname name="Node js" />
-        <Techname name="Express" />
-      </MotionBox>
+        <Flex
+          id="slider-track"
+          animation={slideAnimation}
+          width="calc(12rem * 16)"
+        >
+          <Techname name="Next js" svg="/svg/nextjs.svg" />
+          <Techname name="React js" svg="/svg/react.svg" />
+          <Techname name="Chakra UI" svg="/svg/chakraui.svg" />
+          <Techname name="Typescript" svg="/svg/typescript.svg" />
+          <Techname name="Node js" svg="/svg/nodejs.svg" />
+          <Techname name="Express" svg="/svg/express.svg" />
+          <Techname name="Javascript" svg="/svg/javascript.svg" />
+          <Techname name="Bootstrap" svg="/svg/bootstrap.svg" />
+
+          <Techname name="Next js" svg="/svg/nextjs.svg" />
+          <Techname name="React js" svg="/svg/react.svg" />
+          <Techname name="Chakra UI" svg="/svg/chakraui.svg" />
+          <Techname name="Typescript" svg="/svg/typescript.svg" />
+          <Techname name="Node js" svg="/svg/nodejs.svg" />
+          <Techname name="Express" svg="/svg/express.svg" />
+          <Techname name="Javascript" svg="/svg/javascript.svg" />
+          <Techname name="Bootstrap" svg="/svg/bootstrap.svg" />
+        </Flex>
+      </Flex>
     </Box>
   );
 }
