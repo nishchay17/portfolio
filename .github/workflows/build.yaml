@@ -3,6 +3,11 @@ on: [push]
 jobs:
   build-app:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_G_CODE: ${{ secrets.NEXT_PUBLIC_G_CODE }}
+      NEXT_PUBLIC_SUPABASE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_KEY }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_RESUME: ${{ secrets.NEXT_PUBLIC_RESUME }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
