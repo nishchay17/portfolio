@@ -19,3 +19,11 @@ jobs:
         run: yarn build
       - name: Finish
         run: echo "run completed"
+  run-eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run eslist
+        run: yarn lint
+      - name: Finish
+        run: echo "Eslint run completed"
