@@ -28,6 +28,7 @@ function Social(): ReactElement {
           >
             <a
               href="https://github.com/nishchay17"
+              aria-label="github"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -35,6 +36,7 @@ function Social(): ReactElement {
             </a>
             <a
               href="https://www.instagram.com/nishchay17"
+              aria-label="instagram"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -42,6 +44,7 @@ function Social(): ReactElement {
             </a>
             <a
               href="https://www.linkedin.com/in/nishchay-trivedi-61219978"
+              aria-label="linkedin"
               target="_blank"
               rel="noopener noreferrer"
             >

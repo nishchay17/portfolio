@@ -1,7 +1,18 @@
 import React, { ReactElement } from "react";
+import Image from "next/image";
 import { Box, Container, Flex, Text } from "@chakra-ui/layout";
 import { keyframes } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/color-mode";
+
+import Next from "../../public/svg/nextjs.svg";
+import ReactImage from "../../public/svg/react.svg";
+import Chakra from "../../public/svg/chakraui.svg";
+import Typescript from "../../public/svg/typescript.svg";
+import Node from "../../public/svg/nodejs.svg";
+import Express from "../../public/svg/express.svg";
+import Javascript from "../../public/svg/javascript.svg";
+import Bootstrap from "../../public/svg/bootstrap.svg";
+
 interface TechNameProp {
   name: string;
   svg: string;
@@ -25,7 +36,7 @@ function Tech(): ReactElement {
           alignItems="center"
           height="100%"
         >
-          <img src={svg} title={name} />
+          <Image src={svg} title={name} alt={name} />
         </Flex>
       </Box>
     );
@@ -50,23 +61,23 @@ function Tech(): ReactElement {
           animation={slideAnimation}
           width="calc(12rem * 16)"
         >
-          <Techname name="Next js" svg="/svg/nextjs.svg" />
-          <Techname name="React js" svg="/svg/react.svg" />
-          <Techname name="Chakra UI" svg="/svg/chakraui.svg" />
-          <Techname name="Typescript" svg="/svg/typescript.svg" />
-          <Techname name="Node js" svg="/svg/nodejs.svg" />
-          <Techname name="Express" svg="/svg/express.svg" />
-          <Techname name="Javascript" svg="/svg/javascript.svg" />
-          <Techname name="Bootstrap" svg="/svg/bootstrap.svg" />
+          <Techname name="Next js" svg={Next} />
+          <Techname name="React js" svg={ReactImage} />
+          <Techname name="Chakra UI" svg={Chakra} />
+          <Techname name="Typescript" svg={Typescript} />
+          <Techname name="Node js" svg={Node} />
+          <Techname name="Express" svg={Express} />
+          <Techname name="Javascript" svg={Javascript} />
+          <Techname name="Bootstrap" svg={Bootstrap} />
 
-          <Techname name="Next js" svg="/svg/nextjs.svg" />
-          <Techname name="React js" svg="/svg/react.svg" />
-          <Techname name="Chakra UI" svg="/svg/chakraui.svg" />
-          <Techname name="Typescript" svg="/svg/typescript.svg" />
-          <Techname name="Node js" svg="/svg/nodejs.svg" />
-          <Techname name="Express" svg="/svg/express.svg" />
-          <Techname name="Javascript" svg="/svg/javascript.svg" />
-          <Techname name="Bootstrap" svg="/svg/bootstrap.svg" />
+          <Techname name="Next js" svg={Next} />
+          <Techname name="React js" svg={ReactImage} />
+          <Techname name="Chakra UI" svg={Chakra} />
+          <Techname name="Typescript" svg={Typescript} />
+          <Techname name="Node js" svg={Node} />
+          <Techname name="Express" svg={Express} />
+          <Techname name="Javascript" svg={Javascript} />
+          <Techname name="Bootstrap" svg={Bootstrap} />
         </Flex>
       </Flex>
     </Box>

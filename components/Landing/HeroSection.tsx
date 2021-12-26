@@ -5,6 +5,7 @@ import { FiDownload, FiMail, FiArrowDown } from "react-icons/fi";
 
 import MotionBox from "../MotionBox";
 import Nav from "../Nav";
+import heroPattern from "../../public/img/hero.png";
 
 function HeroSection(): ReactElement {
   return (
@@ -107,12 +108,10 @@ function HeroSection(): ReactElement {
           width="clamp(300px,25vw, 350px)"
         >
           <Image
-            src="/img/hero.png"
+            src={heroPattern}
             alt="pattern"
-            layout="responsive"
-            sizes="100vh"
-            height={450}
-            width={300}
+            quality={100}
+            priority
             draggable={false}
           />
         </MotionBox>

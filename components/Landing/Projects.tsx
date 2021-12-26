@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Image } from "@chakra-ui/image";
+import Image from "next/image";
 import { Badge, Box, Flex, Grid, Text } from "@chakra-ui/layout";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
@@ -66,16 +66,16 @@ function ProjectCard({
       p="1rem"
     >
       <Box width="100%" display={image ? "block" : ["none", "block"]}>
-        <MotionBox
-          as={Image}
-          layoutId={id}
-          alt="project-img"
-          draggable={false}
-          initial={false}
-          width="100%"
-          height="auto"
-          src={image ? getUrl(image) : "/img/no-img.png"}
-        />
+        <MotionBox initial={false} layoutId={id}>
+          <Image
+            src={image ? getUrl(image) : "/img/no-img.png"}
+            height={180}
+            width={320}
+            quality={90}
+            alt="project-img"
+            draggable={false}
+          />
+        </MotionBox>
       </Box>
       <Flex flexDirection="column" justifyContent="space-between">
         <Box>
