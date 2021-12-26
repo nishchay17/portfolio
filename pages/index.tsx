@@ -1,11 +1,17 @@
-import type { GetStaticProps } from "next";
 import { ReactElement } from "react";
+import type { GetStaticProps } from "next";
+import dynamic from "next/dynamic";
+import { Container } from "@chakra-ui/layout";
 
-import LandingLayout from "../components/Landing/LandingLayout";
+const HeroSection = dynamic(() => import("../components/Landing/HeroSection"));
+const Projects = dynamic(() => import("../components/Landing/Projects"));
+const Experience = dynamic(() => import("../components/Landing/Experience"));
+const Tech = dynamic(() => import("../components/Landing/Tech"));
+const Social = dynamic(() => import("../components/Landing/Social"));
+
 import Layout from "../components/layout";
 import { Project } from "../interface/Project";
 import { supabase } from "../lib/supabase";
-
 interface Props {
   data: Project[];
 }
@@ -13,7 +19,13 @@ interface Props {
 function Home({ data }: Props): ReactElement {
   return (
     <Layout withAnimation={false}>
-      <LandingLayout projects={data} />
+      <Container maxW="container.xl">
+        <HeroSection />
+        <Projects projects={data} />
+        <Experience />
+      </Container>
+      <Tech />
+      <Social />
     </Layout>
   );
 }
