@@ -5,4 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: tree
+      - uses: actions/setup-node@v2
+          with:
+            node-version: 14
+      - name: Build the project
+        run: yarn build
+      - name: Finish
+        run: echo "run completed"
+
