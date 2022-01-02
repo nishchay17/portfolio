@@ -66,25 +66,23 @@ function HeroSection(): ReactElement {
                 </Button>
               </a>
             </Tooltip>
-            <a href="mailto:nishchay13971@gmail.com">
-              <MotionBox
-                as={Button}
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                whileHover={{
-                  scale: 1.03,
-                  transition: { duration: 0.1 },
-                }}
-                isFullWidth={false}
-                leftIcon={<FiMail size="1.2rem" />}
-                colorScheme="teal"
-                variant="outline"
-                ml={[0, "1rem"]}
-                mt={["1rem", 0]}
-              >
-                Get In Touch
-              </MotionBox>
-            </a>
+            <Tooltip label="Email ✉">
+              <a href="mailto:nishchay13971@gmail.com">
+                <MotionBox
+                  as={Button}
+                  initial={{ scale: 0.9 }}
+                  animate={{ scale: 1 }}
+                  isFullWidth={false}
+                  leftIcon={<FiMail size="1.2rem" />}
+                  colorScheme="teal"
+                  variant="outline"
+                  ml={[0, "1rem"]}
+                  mt={["1rem", 0]}
+                >
+                  Get In Touch
+                </MotionBox>
+              </a>
+            </Tooltip>
           </MotionBox>
           <MotionBox
             initial={{ opacity: 0, y: -10 }}
