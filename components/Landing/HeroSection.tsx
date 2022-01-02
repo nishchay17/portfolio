@@ -20,8 +20,9 @@ function HeroSection(): ReactElement {
         <Box>
           <MotionBox
             as={Heading}
-            initial={{ opacity: 0, x: -10 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
             fontWeight="700"
             fontSize={["6xl", "7xl"]}
             lineHeight="100%"
@@ -34,7 +35,7 @@ function HeroSection(): ReactElement {
           <MotionBox
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.5 }}
             as={Text}
             fontSize={"2xl"}
             mt="1rem"
@@ -42,7 +43,14 @@ function HeroSection(): ReactElement {
           >
             Creating Web Experiences And More
           </MotionBox>
-          <Flex mt="2rem" flexDirection={["column", "row"]}>
+          <MotionBox
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.7 }}
+            as={Flex}
+            mt="2rem"
+            flexDirection={["column", "row"]}
+          >
             <Tooltip label="Download me 🚀">
               <a
                 href={process.env.NEXT_PUBLIC_RESUME}
@@ -77,11 +85,11 @@ function HeroSection(): ReactElement {
                 Get In Touch
               </MotionBox>
             </a>
-          </Flex>
+          </MotionBox>
           <MotionBox
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 1.3 }}
             as={Flex}
             opacity="0.6"
             alignItems="center"
@@ -91,7 +99,7 @@ function HeroSection(): ReactElement {
             <MotionBox
               animate={{
                 y: [-5, 5, -5],
-                transition: { duration: 2, repeat: Infinity },
+                transition: { duration: 2, repeat: Infinity, delay: 1 },
               }}
             >
               <Box ml="0.5rem">
@@ -103,7 +111,7 @@ function HeroSection(): ReactElement {
         <MotionBox
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.7, duration: 0.3 }}
           display={["none", "none", "block"]}
           width="clamp(300px,25vw, 350px)"
         >
