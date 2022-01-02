@@ -45,8 +45,12 @@ function ProjectCard({
     }
   }, [controls, inView]);
 
-  function getUrl(image: string): string | null {
-    const { publicURL } = supabase.storage.from("image").getPublicUrl(image);
+  function getUrl(image: string): string {
+    if (image === "") return "/img/no-img.png";
+    const { publicURL, error } = supabase.storage
+      .from("image")
+      .getPublicUrl(image);
+    if (error || !publicURL) return "/img/no-img.png";
     return publicURL;
   }
 
@@ -68,7 +72,7 @@ function ProjectCard({
       <Box width="100%" display={image ? "block" : ["none", "block"]}>
         <MotionBox initial={false} layoutId={id}>
           <Image
-            src={image ? getUrl(image) : "/img/no-img.png"}
+            src={getUrl(image ? image : "")}
             height={180}
             width={320}
             quality={90}
