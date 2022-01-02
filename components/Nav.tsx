@@ -7,7 +7,7 @@ import ThemeToggleButton from "./ThemeToggleButton";
 function Nav(): ReactElement {
   return (
     <>
-      <Container maxW="container.xl" py="1rem">
+      <Container maxW="container.xl" py="1rem" px={0}>
         <nav>
           <Flex alignItems="center" justifyContent="space-between">
             <Link href="/">
