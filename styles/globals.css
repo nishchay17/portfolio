@@ -13,6 +13,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   font-family: "Sora", serif;
 }
 
