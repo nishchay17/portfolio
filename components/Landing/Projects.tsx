@@ -68,20 +68,22 @@ function ProjectCard({
       color="whiteAlpha.900"
       borderRadius="7px"
       p="1rem"
+      display="flex"
+      flexDirection="column"
     >
       <Box width="100%" display={image ? "block" : ["none", "block"]}>
         <MotionBox initial={false} layoutId={id}>
           <Image
             src={getUrl(image ? image : "")}
-            height={180}
-            width={320}
+            height={214}
+            width={380}
             quality={90}
             alt="project-img"
             draggable={false}
           />
         </MotionBox>
       </Box>
-      <Flex flexDirection="column" justifyContent="space-between">
+      <Flex flex={1} flexDirection="column" justifyContent="space-between">
         <Box>
           <Text fontWeight="600" mt={image ? "1rem" : [0, "1rem"]}>
             {name}
@@ -119,12 +121,7 @@ function Projects({ projects }: Props): ReactElement {
         Projects
       </Text>
       <Grid
-        templateColumns={[
-          "repeat(1, 1fr)",
-          "repeat(2, 1fr)",
-          "repeat(3, 1fr)",
-          "repeat(4, 1fr)",
-        ]}
+        templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]}
         gap="0.5rem"
       >
         {projects.map((data, idx) => (
