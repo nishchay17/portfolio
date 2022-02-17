@@ -9,6 +9,7 @@ import { useColorMode } from "@chakra-ui/color-mode";
 import { Project } from "../../interface/Project";
 import MotionBox from "../MotionBox";
 import { supabase } from "../../lib/supabase";
+import Link from "next/link";
 
 const item = {
   visible: (i: number) => ({
@@ -55,58 +56,63 @@ function ProjectCard({
   }
 
   return (
-    <MotionBox
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={item}
-      custom={index}
-      onClick={() => routrer.push(`/project/${id}`)}
-      cursor="pointer"
-      width={"100%"}
-      bg={colorMode === "dark" ? "gray.700" : "blackAlpha.800"}
-      color="whiteAlpha.900"
-      borderRadius="7px"
-      p="1rem"
-      display="flex"
-      flexDirection="column"
-    >
-      <Box width="100%" display={image ? "block" : ["none", "block"]}>
-        <MotionBox initial={false} layoutId={id}>
-          <Image
-            src={getUrl(image ? image : "")}
-            height={214}
-            width={380}
-            quality={90}
-            alt="project-img"
-            draggable={false}
-          />
+    <Link href={`/project/${id}`}>
+      <a>
+        <MotionBox
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={item}
+          custom={index}
+          onClick={() => routrer.push(`/project/${id}`)}
+          cursor="pointer"
+          width={"100%"}
+          height={"100%"}
+          bg={colorMode === "dark" ? "gray.700" : "blackAlpha.800"}
+          color="whiteAlpha.900"
+          borderRadius="7px"
+          p="1rem"
+          display="flex"
+          flexDirection="column"
+        >
+          <Box width="100%" display={image ? "block" : ["none", "block"]}>
+            <MotionBox initial={false} layoutId={id}>
+              <Image
+                src={getUrl(image ? image : "")}
+                height={214}
+                width={380}
+                quality={90}
+                alt="project-img"
+                draggable={false}
+              />
+            </MotionBox>
+          </Box>
+          <Flex flex={1} flexDirection="column" justifyContent="space-between">
+            <Box>
+              <Text fontWeight="600" mt={image ? "1rem" : [0, "1rem"]}>
+                {name}
+              </Text>
+              <Text fontSize="0.9rem" lineHeight="120%" mt="1rem" noOfLines={3}>
+                {description}
+              </Text>
+            </Box>
+            <Flex mt="1rem" flexWrap="wrap">
+              {tag.split(" ").map((name, idx) => (
+                <Badge
+                  colorScheme="teal"
+                  size="0.7rem"
+                  key={idx}
+                  mt="0.5rem"
+                  mr="0.5rem"
+                >
+                  {name}
+                </Badge>
+              ))}
+            </Flex>
+          </Flex>
         </MotionBox>
-      </Box>
-      <Flex flex={1} flexDirection="column" justifyContent="space-between">
-        <Box>
-          <Text fontWeight="600" mt={image ? "1rem" : [0, "1rem"]}>
-            {name}
-          </Text>
-          <Text fontSize="0.9rem" lineHeight="120%" mt="1rem" noOfLines={3}>
-            {description}
-          </Text>
-        </Box>
-        <Flex mt="1rem" flexWrap="wrap">
-          {tag.split(" ").map((name, idx) => (
-            <Badge
-              colorScheme="teal"
-              size="0.7rem"
-              key={idx}
-              mt="0.5rem"
-              mr="0.5rem"
-            >
-              {name}
-            </Badge>
-          ))}
-        </Flex>
-      </Flex>
-    </MotionBox>
+      </a>
+    </Link>
   );
 }
 
