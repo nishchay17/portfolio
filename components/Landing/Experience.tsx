@@ -54,7 +54,7 @@ function Experience(): ReactElement {
                 width="1.5rem"
               />
             </Box>
-            <List spacing={1} ml="3rem" mt="1rem">
+            <List spacing={1} ml={["2rem", "3rem"]} mt="1rem">
               {points.map((ptn) => {
                 return (
                   <ListItem key={ptn}>
