@@ -1,9 +1,21 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, ButtonGroup } from "@chakra-ui/button";
 import { Img } from "@chakra-ui/react";
-import { Badge, Box, Container, Flex, Text } from "@chakra-ui/layout";
+import {
+  Badge,
+  Box,
+  Container,
+  Flex,
+  Text,
+  Heading,
+  Code,
+} from "@chakra-ui/layout";
 import { FiArrowUpRight, FiChevronLeft, FiGithub } from "react-icons/fi";
+import { BsFileEarmarkText } from "react-icons/bs";
+import ReactMarkdown from "react-markdown";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import axios from "axios";
 
 import { Project } from "../../interface/Project";
 import MotionBox from "../MotionBox";
@@ -11,12 +23,98 @@ import { supabase } from "../../lib/supabase";
 interface Props {
   project: Project;
 }
+interface themeProp {
+  children: any;
+  href?: string;
+}
+
+const markdownTheme = {
+  h1: (props: themeProp) => {
+    const { children } = props;
+    return (
+      <Heading as="h1" fontSize={"4xl"} my={4}>
+        {children}
+      </Heading>
+    );
+  },
+  h2: (props: themeProp) => {
+    const { children } = props;
+    return (
+      <Heading as="h3" fontSize={"3xl"} my={4}>
+        {children}
+      </Heading>
+    );
+  },
+  h3: (props: themeProp) => {
+    const { children } = props;
+    return (
+      <Heading as="h3" fontSize={"2xl"} my={3}>
+        {children}
+      </Heading>
+    );
+  },
+  code: (props: themeProp) => {
+    const { children } = props;
+    return (
+      <Code
+        my={2}
+        bg="#212144"
+        color="white"
+        py="0.3rem"
+        px="0.6rem"
+        borderRadius="5px"
+      >
+        {children}
+      </Code>
+    );
+  },
+  a: (props: themeProp) => {
+    const { children, href } = props;
+    if (href)
+      return (
+        <Link href={href}>
+          <a target={"_blank"} rel="noreferrer">
+            {children}
+          </a>
+        </Link>
+      );
+    else return <a>{children}</a>;
+  },
+};
 
 function ProjectLayout({ project }: Props): ReactElement {
+  const [readme, setReadme] = useState("");
+
+  function getReadMeUrl(repoLink: string): string {
+    const repoSplit = repoLink.split("/");
+    return `https://raw.githubusercontent.com/nishchay17/${
+      repoSplit[repoSplit.length - 1]
+    }/main/README.md`;
+  }
+
   function getUrl(image: string): string | null {
     const { publicURL } = supabase.storage.from("image").getPublicUrl(image);
     return publicURL;
   }
+
+  async function fetchReadme(url: string) {
+    try {
+      const res = await axios.get(url);
+      return res.data;
+    } catch (error) {
+      console.error(error);
+      return "";
+    }
+  }
+
+  useEffect(() => {
+    async function getReadme(githubLink: string) {
+      const url = getReadMeUrl(githubLink);
+      const readmeData = await fetchReadme(url);
+      setReadme(readmeData);
+    }
+    if (project.github) getReadme(project.github);
+  }, [project]);
 
   return (
     <Container maxW="container.xl">
@@ -36,35 +134,6 @@ function ProjectLayout({ project }: Props): ReactElement {
             </Button>
           </a>
         </Link>
-
-        <Flex mt={["0.5rem", 0]} flexDirection={["column", "row"]}>
-          {/* <Link
-            href={
-              ProjectLists[
-                (project.id + ProjectLists.length - 1) % ProjectLists.length
-              ].id
-            }
-          >
-            <a>
-              <Button colorScheme="teal" leftIcon={<FiChevronLeft />}>
-                Previous Project
-              </Button>
-            </a>
-          </Link>
-
-          <Link href={ProjectLists[(project.id + 1) % ProjectLists.length].id}>
-            <a>
-              <Button
-                colorScheme="teal"
-                rightIcon={<FiChevronRight />}
-                mt={["0.5rem", 0]}
-                ml={[0, "0.5rem"]}
-              >
-                Next Project
-              </Button>
-            </a>
-          </Link> */}
-        </Flex>
       </Flex>
       <Flex
         my="3rem"
@@ -128,6 +197,21 @@ function ProjectLayout({ project }: Props): ReactElement {
           />
         )}
       </Flex>
+      <Box padding="1rem" mb="3rem" bg="blue.50">
+        <Box mb="1.5rem">
+          <Flex alignItems="center" mb="0.5rem">
+            <Text fontSize="1.75rem" mr="0.7rem">
+              README
+            </Text>
+            <BsFileEarmarkText size="2rem" />
+          </Flex>
+          <hr />
+        </Box>
+
+        <ReactMarkdown components={ChakraUIRenderer(markdownTheme)} skipHtml>
+          {readme}
+        </ReactMarkdown>
+      </Box>
     </Container>
   );
 }
