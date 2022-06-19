@@ -83,7 +83,8 @@ const markdownTheme = {
 };
 
 function ProjectLayout({ project }: Props): ReactElement {
-  const [readme, setReadme] = useState("");
+  const [readme, setReadme] = useState(null);
+  const [isLoading, setIsLoading] = useState<Boolean>(false);
 
   function getReadMeUrl(repoLink: string): string {
     const repoSplit = repoLink.split("/");
@@ -110,8 +111,15 @@ function ProjectLayout({ project }: Props): ReactElement {
   useEffect(() => {
     async function getReadme(githubLink: string) {
       const url = getReadMeUrl(githubLink);
-      const readmeData = await fetchReadme(url);
-      setReadme(readmeData);
+      setIsLoading(true);
+      try {
+        const readmeData = await fetchReadme(url);
+        setReadme(readmeData);
+      } catch (err) {
+        setReadme(null);
+      } finally {
+        setIsLoading(false);
+      }
     }
     if (project.github) getReadme(project.github);
   }, [project]);
@@ -197,21 +205,23 @@ function ProjectLayout({ project }: Props): ReactElement {
           />
         )}
       </Flex>
-      <Box padding="1rem" mb="3rem" bg="blue.50">
-        <Box mb="1.5rem">
-          <Flex alignItems="center" mb="0.5rem">
-            <Text fontSize="1.75rem" mr="0.7rem">
-              README
-            </Text>
-            <BsFileEarmarkText size="2rem" />
-          </Flex>
-          <hr />
+      {isLoading && <>Loading Additional information</>}
+      {readme && (
+        <Box padding="1rem" mb="3rem" bg="blue.50">
+          <Box mb="1.5rem">
+            <Flex alignItems="center" mb="0.5rem">
+              <Text fontSize="1.75rem" mr="0.7rem">
+                README
+              </Text>
+              <BsFileEarmarkText size="2rem" />
+            </Flex>
+            <hr />
+          </Box>
+          <ReactMarkdown components={ChakraUIRenderer(markdownTheme)} skipHtml>
+            {readme}
+          </ReactMarkdown>
         </Box>
-
-        <ReactMarkdown components={ChakraUIRenderer(markdownTheme)} skipHtml>
-          {readme}
-        </ReactMarkdown>
-      </Box>
+      )}
     </Container>
   );
 }
