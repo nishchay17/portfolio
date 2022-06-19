@@ -9,7 +9,9 @@ const exps = [
     date: "Jan 2022 - Present",
     points: [
       "Worked on developing dashboard using React js and SCSS",
-      "Fixed existing bugs and added functionalities like dashboard popups and API integration",
+      "Migrated vanilla javascript code to React js code",
+      "Fixed existing bugs and added functionalities in dashboards",
+      "Converted design to pixel-perfect components",
     ],
   },
   {
