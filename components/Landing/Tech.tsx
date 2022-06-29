@@ -1,85 +1,93 @@
 import React, { ReactElement } from "react";
-import Image from "next/image";
-import { Box, Container, Flex, Text } from "@chakra-ui/layout";
-import { keyframes } from "@chakra-ui/react";
-import { useColorMode } from "@chakra-ui/color-mode";
-
-import Next from "../../public/svg/nextjs.svg";
-import ReactImage from "../../public/svg/react.svg";
-import Chakra from "../../public/svg/chakraui.svg";
-import Typescript from "../../public/svg/typescript.svg";
-import Node from "../../public/svg/nodejs.svg";
-import Express from "../../public/svg/express.svg";
-import Javascript from "../../public/svg/javascript.svg";
-import Bootstrap from "../../public/svg/bootstrap.svg";
+import { Box, Container, Flex, Text, Grid, Heading } from "@chakra-ui/layout";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiChakraui,
+  SiTypescript,
+  SiNodedotjs,
+  SiExpress,
+  SiBootstrap,
+  SiJavascript,
+} from "react-icons/si";
 
 interface TechNameProp {
   name: string;
-  svg: string;
+  children: ReactElement;
 }
 
-const slide = keyframes`
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-12rem * 8))}
-`;
-
 function Tech(): ReactElement {
-  const slideAnimation = `${slide} 20s linear infinite`;
-  const { colorMode } = useColorMode();
-
-  function Techname({ name, svg }: TechNameProp): ReactElement {
+  function Techname({ name, children }: TechNameProp): ReactElement {
     return (
-      <Box height={["12rem", "12rem"]} width="12rem">
-        <Flex
-          px="1.5rem"
-          justifyContent="center"
-          alignItems="center"
-          height="100%"
-        >
-          <Image src={svg} title={name} alt={name} />
-        </Flex>
-      </Box>
+      <Flex
+        px="1.5rem"
+        justifyContent="center"
+        alignItems="center"
+        height="100%"
+        width="100%"
+        flexDirection="column"
+        border="1px solid rgba(233, 233, 233, 0.1)"
+        borderRadius="7px"
+        p="1.5rem 1rem"
+        backdropFilter="blur(10px) saturate(151%)"
+        bg="rgba(35, 35, 35, 0.20)"
+      >
+        {children}
+        <Text mt="1rem" fontSize="xl">
+          {name}
+        </Text>
+      </Flex>
     );
   }
 
   return (
     <Box as="section" my="2rem">
       <Container maxW="container.xl">
-        <Text as="h3" fontSize="4xl" py="2rem" lineHeight="110%">
-          Tech that I love and use
-        </Text>
-      </Container>
-      <Flex
-        id="slider"
-        bg={colorMode === "dark" ? "whiteAlpha.900" : "white"}
-        height={["12rem", "12rem"]}
-        overflow="hidden"
-        position="relative"
-      >
-        <Flex
-          id="slider-track"
-          animation={slideAnimation}
-          width="calc(12rem * 16)"
+        <Heading
+          as="h3"
+          py="2rem"
+          lineHeight="110%"
+          mt="4rem"
+          mb="3rem"
+          fontSize="6xl"
+          letterSpacing="4px"
         >
-          <Techname name="Next js" svg={Next} />
-          <Techname name="React js" svg={ReactImage} />
-          <Techname name="Chakra UI" svg={Chakra} />
-          <Techname name="Typescript" svg={Typescript} />
-          <Techname name="Node js" svg={Node} />
-          <Techname name="Express" svg={Express} />
-          <Techname name="Javascript" svg={Javascript} />
-          <Techname name="Bootstrap" svg={Bootstrap} />
-
-          <Techname name="Next js" svg={Next} />
-          <Techname name="React js" svg={ReactImage} />
-          <Techname name="Chakra UI" svg={Chakra} />
-          <Techname name="Typescript" svg={Typescript} />
-          <Techname name="Node js" svg={Node} />
-          <Techname name="Express" svg={Express} />
-          <Techname name="Javascript" svg={Javascript} />
-          <Techname name="Bootstrap" svg={Bootstrap} />
-        </Flex>
-      </Flex>
+          Tech that I love and use
+        </Heading>
+        <Grid
+          templateColumns={[
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
+          gap={["1rem", "1.5rem"]}
+        >
+          <Techname name="Next js">
+            <SiNextdotjs size="5rem" />
+          </Techname>
+          <Techname name="React js">
+            <SiReact size="5rem" />
+          </Techname>
+          <Techname name="Chakra UI">
+            <SiChakraui size="5rem" />
+          </Techname>
+          <Techname name="Typescript">
+            <SiTypescript size="5rem" />
+          </Techname>
+          <Techname name="Node js">
+            <SiNodedotjs size="5rem" />
+          </Techname>
+          <Techname name="Express">
+            <SiExpress size="5rem" />
+          </Techname>
+          <Techname name="Javascript">
+            <SiJavascript size="5rem" />
+          </Techname>
+          <Techname name="Bootstrap">
+            <SiBootstrap size="5rem" />
+          </Techname>
+        </Grid>
+      </Container>
     </Box>
   );
 }

@@ -1,26 +1,38 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
-import { Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Text } from "@chakra-ui/react";
 
-import ThemeToggleButton from "./ThemeToggleButton";
 import MotionBox from "./MotionBox";
 
-function Nav(): ReactElement {
+interface NavProp {
+  isSticky: boolean;
+}
+
+function Nav({ isSticky }: NavProp): ReactElement {
+  // console.log(isSticky)
   return (
-    <>
+    <Box
+      position="fixed"
+      top={0}
+      zIndex={1000}
+      right={0}
+      left={0}
+      backdropFilter="blur(10px) saturate(151%)"
+      bg="rgba(24, 24, 24, 0.5)"
+      className={isSticky ? "nav sticky-nav" : "nav"}
+      boxShadow={isSticky ? "0 1px 1px rgba(233, 233, 233, 0.1)" : ""}
+    >
       <MotionBox
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
         as={Container}
         maxW="container.xl"
-        py="1rem"
-        px={0}
       >
         <Flex as={"nav"} alignItems="center" justifyContent="space-between">
           <Link href="/">
             <a>
-              <h1>Nishchay</h1>
+              <h1>Nishchay17</h1>
             </a>
           </Link>
           <Flex alignItems="center">
@@ -32,7 +44,7 @@ function Nav(): ReactElement {
               <Text
                 sx={{
                   ":hover": {
-                    color: "teal.800",
+                    color: "white",
                   },
                 }}
               >
@@ -42,10 +54,10 @@ function Nav(): ReactElement {
             <Link href="/#projects">
               <a>
                 <Text
-                  mx="1rem"
+                  ml="1rem"
                   sx={{
                     ":hover": {
-                      color: "teal.800",
+                      color: "white",
                     },
                   }}
                 >
@@ -53,11 +65,10 @@ function Nav(): ReactElement {
                 </Text>
               </a>
             </Link>
-            <ThemeToggleButton />
           </Flex>
         </Flex>
       </MotionBox>
-    </>
+    </Box>
   );
 }
 

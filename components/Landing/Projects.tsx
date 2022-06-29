@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Badge, Box, Flex, Grid, Text } from "@chakra-ui/layout";
+import { Badge, Box, Flex, Grid, Text, Heading } from "@chakra-ui/layout";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 import { useColorMode } from "@chakra-ui/color-mode";
@@ -68,11 +68,13 @@ function ProjectCard({
           cursor="pointer"
           width={"100%"}
           height={"100%"}
-          bg={colorMode === "dark" ? "gray.700" : "blackAlpha.800"}
+          backdropFilter="blur(10px) saturate(151%)"
+          bg="rgba(10, 10, 10, 0.3)"
           color="whiteAlpha.900"
           borderRadius="7px"
           p="1rem"
           display="flex"
+          border={"1px solid rgba(233, 233, 233, 0.1)"}
           flexDirection="column"
         >
           <Box width="100%" display={image ? "block" : ["none", "block"]}>
@@ -89,10 +91,10 @@ function ProjectCard({
           </Box>
           <Flex flex={1} flexDirection="column" justifyContent="space-between">
             <Box>
-              <Text fontWeight="600" mt={image ? "1rem" : [0, "1rem"]}>
+              <Text fontSize="xl" mt={image ? "1rem" : [0, "1rem"]}>
                 {name}
               </Text>
-              <Text fontSize="0.9rem" lineHeight="120%" mt="1rem" noOfLines={3}>
+              <Text lineHeight="120%" mt="1rem" noOfLines={3}>
                 {description}
               </Text>
             </Box>
@@ -122,19 +124,26 @@ interface Props {
 
 function Projects({ projects }: Props): ReactElement {
   return (
-    <Box as="section" my="2rem" id="projects">
-      <Text as="h3" fontSize="4xl" py="2rem">
-        Projects
-      </Text>
-      <Grid
-        templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]}
-        gap="0.5rem"
-      >
-        {projects.map((data, idx) => (
-          <ProjectCard key={data.id} index={idx} {...data} />
-        ))}
-      </Grid>
-    </Box>
+    <>
+      <Box id="projects" />
+      <Box as="section" mb="2rem" transform="translateY(1.5rem)">
+        <Heading as="h3" fontSize="6xl" letterSpacing="4px" py="2rem">
+          Projects
+        </Heading>
+        <Grid
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+          ]}
+          gap="0.8rem"
+        >
+          {projects.map((data, idx) => (
+            <ProjectCard key={data.id} index={idx} {...data} />
+          ))}
+        </Grid>
+      </Box>
+    </>
   );
 }
 

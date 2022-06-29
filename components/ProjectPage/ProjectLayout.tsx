@@ -149,7 +149,7 @@ function ProjectLayout({ project }: Props): ReactElement {
         flexDirection={["column-reverse", "column-reverse", "row"]}
       >
         <Box width={["100%", "100%", "40%"]}>
-          <Text fontSize="4xl" fontWeight="600">
+          <Text fontSize="5xl" fontWeight="500">
             {project?.name}
           </Text>
           <Flex flexWrap="wrap">
@@ -207,7 +207,7 @@ function ProjectLayout({ project }: Props): ReactElement {
       </Flex>
       {isLoading && <>Loading Additional information</>}
       {readme && (
-        <Box padding="1rem" mb="3rem" bg="blue.50">
+        <Box padding="1rem" mb="3rem">
           <Box mb="1.5rem">
             <Flex alignItems="center" mb="0.5rem">
               <Text fontSize="1.75rem" mr="0.7rem">

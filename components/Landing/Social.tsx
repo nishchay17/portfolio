@@ -1,12 +1,10 @@
 import React, { ReactElement } from "react";
-import { Box, Container, Flex, Grid } from "@chakra-ui/layout";
-import { Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Text } from "@chakra-ui/react";
 import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 
 function Social(): ReactElement {
   return (
-    <Box as="footer" bg="blackAlpha.800" mt="4rem" width="100%">
-      <Box height="0.5rem" width="100%" bg="teal.500" />
+    <Box as="footer" mt="4rem" width="100%">
       <Container py={["1.5rem", "2rem"]} maxW="container.xl" color="white">
         <Flex alignContent="center" justifyContent="space-between">
           <Text fontSize="2xl" lineHeight={["115%", "130%"]}>
@@ -22,7 +20,7 @@ function Social(): ReactElement {
                 transition: "all 0.1s",
               },
               "& > *:hover": {
-                color: "teal.400",
+                color: "whiteAlpha.700",
               },
             }}
           >
