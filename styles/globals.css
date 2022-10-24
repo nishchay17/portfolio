@@ -16,11 +16,11 @@ body {
   scroll-behavior: smooth;
   font-family: "Sora", serif;
 }
-
+/* 
 ::selection {
   color: #181818;
   background: #e1e1e1;
-}
+} */
 
 a {
   color: inherit;
@@ -48,9 +48,33 @@ a {
 
 .nav {
   transition: all 0.7s ease;
-  padding: 16px 0;
+  padding: 12px 0;
 }
 
 .sticky-nav {
-  padding: 8px 0;
+  padding: 6px 0;
+}
+
+.hero-gradient {
+  border-radius: 7px;
+  background: linear-gradient(
+      79.2deg,
+      rgba(230, 249, 115, 0.2) 0.22%,
+      rgba(255, 255, 255, 0) 34.61%
+    ),
+    linear-gradient(
+      202.03deg,
+      rgba(255, 176, 176, 0.2) 9.96%,
+      rgba(255, 200, 200, 0) 41.15%
+    ),
+    linear-gradient(
+      282.49deg,
+      rgba(175, 255, 226, 0.2) 0%,
+      rgba(255, 255, 255, 0) 58.98%
+    ),
+    linear-gradient(
+      101.03deg,
+      rgba(166, 175, 255, 0.2) 0.27%,
+      rgba(255, 255, 255, 0) 62.21%
+    );
 }

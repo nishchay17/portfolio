@@ -18,9 +18,8 @@ function Nav({ isSticky }: NavProp): ReactElement {
       right={0}
       left={0}
       backdropFilter="blur(10px) saturate(151%)"
-      bg="rgba(24, 24, 24, 0.5)"
       className={isSticky ? "nav sticky-nav" : "nav"}
-      boxShadow={isSticky ? "0 1px 1px rgba(233, 233, 233, 0.1)" : ""}
+      boxShadow={isSticky ? "0 1px 1px rgba(255, 255, 255, 0.1)" : ""}
     >
       <MotionBox
         initial={{ opacity: 0, y: -20 }}

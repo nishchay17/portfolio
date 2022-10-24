@@ -12,13 +12,14 @@ const config: ThemeConfig = {
 const fonts = {
   ...chakraTheme.fonts,
   body: `'Source Sans Pro', sans-serif`,
-  heading: `'Refinest', serif`,
+  heading: `"Cormorant Garamond", serif`,
 };
 
 const components = {
   Heading: {
     baseStyle: {
-      fontWeight: "400",
+      fontWeight: "500",
+      letterSpacing: "1px",
     },
   },
   Button: {
@@ -40,8 +41,7 @@ const components = {
 const styles = {
   global: {
     body: {
-      bg: "#181818",
-      color: "#e1e1e1",
+      color: "#1d1d1d",
     },
   },
 };

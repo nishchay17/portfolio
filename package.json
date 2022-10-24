@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^1.6.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/cormorant-garamond": "^4.5.10",
     "@fontsource/ibm-plex-serif": "^4.5.10",
     "@fontsource/prata": "^4.5.9",
     "@fontsource/quintessential": "^4.5.7",
