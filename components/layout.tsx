@@ -1,9 +1,11 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { Waypoint } from "react-waypoint";
 
-import { supabase } from "../lib/supabase";
 import MotionBox from "./MotionBox";
+import { supabase } from "../lib/supabase";
+import Nav from "./Nav";
 interface Props {
   children: ReactElement[] | ReactElement;
   title: string;
@@ -51,6 +53,27 @@ function Layout({
   //   };
   // }, []);
 
+  const [isSticky, setIsSticky] = useState<boolean>(false);
+
+  const setSticky = () => {
+    setIsSticky(true);
+  };
+  const removeSticky = () => {
+    setIsSticky(false);
+  };
+  const onWaypointPositionChange = ({
+    currentPosition,
+  }: {
+    currentPosition: string;
+  }) => {
+    if (currentPosition === "above") {
+      setSticky();
+    }
+    if (currentPosition === "below") {
+      removeSticky();
+    }
+  };
+
   return (
     <>
       {!(withAuth && !isLoggedin) && (
@@ -65,7 +88,12 @@ function Layout({
           <Head>
             <title>{title !== "" ? `Nishchay | ${title}` : "Nishchay"}</title>
           </Head>
-          <>{children}</>
+          <Waypoint
+            onEnter={removeSticky}
+            onPositionChange={onWaypointPositionChange}
+          />
+          <Nav isSticky={isSticky} />
+          {children}
         </MotionBox>
       )}
     </>

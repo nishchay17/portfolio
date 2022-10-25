@@ -16,11 +16,11 @@ body {
   scroll-behavior: smooth;
   font-family: "Sora", serif;
 }
-/* 
+
 ::selection {
-  color: #181818;
-  background: #e1e1e1;
-} */
+  color: #a8a8a8;
+  background: #1f1f1f;
+}
 
 a {
   color: inherit;
@@ -56,25 +56,37 @@ a {
 }
 
 .hero-gradient {
+  position: relative;
+}
+
+.hero-gradient::after {
+  transition: opacity 400ms linear;
   border-radius: 7px;
-  background: linear-gradient(
-      79.2deg,
-      rgba(230, 249, 115, 0.2) 0.22%,
-      rgba(255, 255, 255, 0) 34.61%
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.7;
+  content: "";
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 1);
+  background-image: radial-gradient(
+      at 92% 6%,
+      hsla(149, 97%, 74%, 0.508) 0px,
+      transparent 50%
     ),
-    linear-gradient(
-      202.03deg,
-      rgba(255, 176, 176, 0.2) 9.96%,
-      rgba(255, 200, 200, 0) 41.15%
-    ),
-    linear-gradient(
-      282.49deg,
-      rgba(175, 255, 226, 0.2) 0%,
-      rgba(255, 255, 255, 0) 58.98%
-    ),
-    linear-gradient(
-      101.03deg,
-      rgba(166, 175, 255, 0.2) 0.27%,
-      rgba(255, 255, 255, 0) 62.21%
-    );
+    radial-gradient(at 6% 92%, rgba(255, 127, 127, 0.407) 0px, transparent 40%),
+    radial-gradient(at 98% 94%, rgba(191, 119, 250, 0.412) 0px, transparent 50%),
+    radial-gradient(at 2% 5%, hsla(226, 100%, 75%, 0.394) 0px, transparent 50%);
+}
+
+@media screen and (max-width: 768px) {
+  .hero-gradient::after {
+    opacity: 1;
+  }
+}
+
+.hero-gradient:hover::after {
+  opacity: 1;
 }

@@ -24,13 +24,12 @@ function HeroSection(): ReactElement {
             alignItems={"center"}
           >
             <MotionBox
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
               as={Flex}
               flexDirection="column"
-              width={["100%", "95%", "75%", "70%"]}
-              mt="5rem"
+              width={["100%", "95%", "75%"]}
             >
               <Heading
                 fontSize={["40px", "6vw"]}
@@ -43,22 +42,21 @@ function HeroSection(): ReactElement {
               </Heading>
             </MotionBox>
             <MotionBox
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 0.8, x: 0 }}
-              transition={{ delay: 0.5 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.8 }}
+              transition={{ delay: 0.6 }}
               as={Text}
-              fontSize={["1xl", "2xl"]}
+              fontSize={["1xl", "1.5vw"]}
               mt="1rem"
               lineHeight="120%"
-              letterSpacing="0.5px"
               textAlign="center"
             >
               A full stack developer, <br /> designing and developing web
             </MotionBox>
             <MotionBox
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
               as={Flex}
               mt="4rem"
               flexDirection={["column", "row"]}
@@ -71,7 +69,7 @@ function HeroSection(): ReactElement {
               >
                 <Button
                   isFullWidth={false}
-                  colorScheme="blackAlpha"
+                  colorScheme="gray"
                   leftIcon={<FiDownload size="1.2rem" />}
                 >
                   Download Resume
@@ -84,7 +82,7 @@ function HeroSection(): ReactElement {
                   animate={{ scale: 1 }}
                   isFullWidth={false}
                   leftIcon={<FiMail size="1.2rem" />}
-                  colorScheme="blackAlpha"
+                  colorScheme="gray"
                   ml={[0, "1rem"]}
                   mt={["1rem", 0]}
                 >

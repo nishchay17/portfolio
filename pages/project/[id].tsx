@@ -3,11 +3,10 @@ import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 
 import ProjectLayout from "../../components/ProjectPage/ProjectLayout";
-import Layout from "../../components/layout";
+import Layout from "../../components/Layout";
 import Nav from "../../components/Nav";
 import { supabase } from "../../lib/supabase";
 import { Project as Pro } from "../../interface/Project";
-import { Container } from "@chakra-ui/react";
 
 interface IParams extends ParsedUrlQuery {
   id: string;
@@ -20,9 +19,6 @@ interface Props {
 function Project({ project }: Props): ReactElement {
   return (
     <Layout title="Project">
-      <Container maxW="container.xl">
-        <Nav />
-      </Container>
       <ProjectLayout project={project} />
     </Layout>
   );
