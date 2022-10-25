@@ -24,7 +24,7 @@ function Home({ data }: Props): ReactElement {
   return (
     <Layout withAnimation={false}>
       <HeroSection />
-      <Container maxW="container.xl">
+      <Container maxW="1600px" px={[0, 0, 0, 0, "2rem"]}>
         <Projects projects={data} />
       </Container>
       <Tech />
@@ -34,16 +34,54 @@ function Home({ data }: Props): ReactElement {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data, error } = await supabase.from("Project").select();
-
-  if (error) {
-    return {
-      props: { data: [] },
-    };
-  }
+  const data = [
+    {
+      id: 47,
+      created_at: "2021-10-26T11:08:33.323102+00:00",
+      name: "Team Collab",
+      description:
+        "Collaborate with Team with team collab. Assign and monitor tasks and share files with the team.",
+      github: "https://github.com/nishchay17/teams-frontend",
+      live: "https://teams-task.netlify.app/",
+      tag: "React Node MongoDB Express",
+      image: "team-collab.png",
+    },
+    {
+      id: 48,
+      created_at: "2021-10-26T11:09:26.136681+00:00",
+      name: "E-commerce",
+      description:
+        "E-commerce website for selling t-shirt complete with payment options, with a simple UI.",
+      github: "https://github.com/nishchay17/TeeStoreFrontend",
+      live: "https://theteestore.netlify.app/",
+      tag: "React Node MongoDB Express",
+      image: "tee.png",
+    },
+    {
+      id: 51,
+      created_at: "2021-10-26T11:12:45.663238+00:00",
+      name: "Url Shortener",
+      description:
+        "Used shrtco.de's API to shorten the given URL and persisted in the local storage.",
+      github: "https://github.com/nishchay17/Shortly",
+      live: "https://shortlytif.netlify.app/",
+      tag: "React",
+      image: "url.png",
+    },
+    {
+      id: 50,
+      created_at: "2021-10-26T11:12:10.976+00:00",
+      name: "CDF (CLI)",
+      description:
+        "Generate files with boilerplate code, for competitive programmers. 470+ Downloads on NPM.",
+      github: "https://github.com/nishchay17/dirMaker",
+      live: "https://www.npmjs.com/package/@nishchay17/cdf",
+      tag: "Node CLI\r\n",
+      image: "cdn.png",
+    },
+  ];
   return {
     props: { data },
-    revalidate: 36000, // 10 hour
   };
 };
 

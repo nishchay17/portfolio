@@ -10,12 +10,12 @@ const margin = 3;
 function HeroSection(): ReactElement {
   return (
     <Box
-      my={`${margin}rem`}
-      mx={`calc(${margin}rem / 1.5)`}
+      my={[0, `${margin}rem`]}
+      mx={[0, `calc(${margin}rem / 1.5)`]}
       className="hero-gradient"
     >
       <Container maxW="container.xl">
-        <Box height={`calc(100vh - ${2 * margin}rem)`}>
+        <Box height={["100vh", `calc(100vh - ${2 * margin}rem)`]}>
           <Flex
             as="section"
             justifyContent="center"
@@ -32,7 +32,7 @@ function HeroSection(): ReactElement {
               width={["100%", "95%", "75%"]}
             >
               <Heading
-                fontSize={["40px", "6vw"]}
+                fontSize={["2.5rem", "3rem", "4rem", "6vw"]}
                 letterSpacing="1px"
                 lineHeight={1}
                 fontWeight={600}
@@ -43,11 +43,12 @@ function HeroSection(): ReactElement {
             </MotionBox>
             <MotionBox
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.8 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
               as={Text}
-              fontSize={["1xl", "1.5vw"]}
+              fontSize={["1rem", "1.2rem", "1.4rem", "1.5rem", "1.5vw"]}
               mt="1rem"
+              color="blackAlpha.800"
               lineHeight="120%"
               textAlign="center"
             >

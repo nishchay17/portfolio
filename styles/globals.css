@@ -19,7 +19,7 @@ body {
 
 ::selection {
   color: #a8a8a8;
-  background: #1f1f1f;
+  background: #424242;
 }
 
 a {
@@ -89,4 +89,15 @@ a {
 
 .hero-gradient:hover::after {
   opacity: 1;
+}
+
+.text-pop {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 14, 221, 1) 0%,
+    rgba(0, 5, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

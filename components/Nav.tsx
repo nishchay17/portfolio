@@ -9,7 +9,6 @@ interface NavProp {
 }
 
 function Nav({ isSticky }: NavProp): ReactElement {
-  // console.log(isSticky)
   return (
     <Box
       position="fixed"
@@ -25,7 +24,7 @@ function Nav({ isSticky }: NavProp): ReactElement {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
-        mx="3rem"
+        mx={["1rem", "3rem"]}
       >
         <Flex as={"nav"} alignItems="center" justifyContent="space-between">
           <Link href="/">
