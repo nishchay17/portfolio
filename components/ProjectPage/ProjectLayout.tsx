@@ -50,7 +50,7 @@ const markdownTheme = {
     return (
       <Code
         my={2}
-        bg="#212144"
+        bg="blackAlpha.800"
         color="white"
         py="0.3rem"
         px="0.6rem"
