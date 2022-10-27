@@ -98,7 +98,6 @@ function ProjectLayout({ project }: Props): ReactElement {
   useEffect(() => {
     async function getReadme(githubLink: string) {
       const url = getReadMeUrl(githubLink);
-      console.log({ url });
       setIsLoading(true);
       try {
         const readmeData = await fetchReadme(url);
@@ -119,7 +118,7 @@ function ProjectLayout({ project }: Props): ReactElement {
         justifyContent="space-between"
         flexDirection={["column", "row"]}
       >
-        <Link href="/#projects">
+        <Link href="/">
           <a>
             <Button
               variant="link"
