@@ -43,13 +43,13 @@ function Tech(): ReactElement {
     <Box as="section" mt="4rem" py="4rem" bg="blackAlpha.100">
       <Container maxW="1600px" px={["1rem", "2rem"]}>
         <Heading
-          as="h3"
-          py="2rem"
-          lineHeight="110%"
           mb="2rem"
-          fontSize="6xl"
-          fontWeight={600}
+          as="h3"
           textAlign="center"
+          fontSize={["4xl", "5xl", "6xl"]}
+          py={["2rem", "3.5rem"]}
+          fontWeight={600}
+          lineHeight={"100%"}
         >
           Tech that I love and use
         </Heading>

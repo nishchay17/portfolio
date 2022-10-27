@@ -46,7 +46,8 @@ const markdownTheme = {
   code: (props: themeProp) => {
     const { children } = props;
     return (
-      <Code
+      <Text
+        overflow="auto"
         my={2}
         bg="blackAlpha.800"
         color="white"
@@ -55,7 +56,7 @@ const markdownTheme = {
         borderRadius="5px"
       >
         {children}
-      </Code>
+      </Text>
     );
   },
   a: (props: themeProp) => {
@@ -73,7 +74,7 @@ const markdownTheme = {
 };
 
 function ProjectLayout({ project }: Props): ReactElement {
-  const [readme, setReadme] = useState(null);
+  const [readme, setReadme] = useState<any>(null);
   const [isLoading, setIsLoading] = useState<Boolean>(false);
 
   function getReadMeUrl(repoLink: string): string {
@@ -89,7 +90,7 @@ function ProjectLayout({ project }: Props): ReactElement {
       const data = await res.text();
       return data;
     } catch (error) {
-      console.error({ error });
+      console.error(error);
       return "";
     }
   }
