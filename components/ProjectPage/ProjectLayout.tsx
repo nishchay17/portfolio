@@ -123,7 +123,7 @@ function ProjectLayout({ project }: Props): ReactElement {
           <a>
             <Button
               variant="link"
-              colorScheme="teal"
+              colorScheme="black"
               leftIcon={<FiChevronLeft />}
             >
               Back
@@ -158,7 +158,7 @@ function ProjectLayout({ project }: Props): ReactElement {
           </Flex>
           <Box mt="1rem">
             <Text>{project?.description}</Text>
-            <ButtonGroup colorScheme="blue" mt="2rem">
+            <ButtonGroup variant="btn-black" mt="2rem">
               {project?.github && (
                 <a
                   href={project?.github}

@@ -69,6 +69,7 @@ function HeroSection(): ReactElement {
                 rel="noopener noreferrer"
               >
                 <Button
+                  variant="btn-black"
                   isFullWidth={false}
                   colorScheme="gray"
                   leftIcon={<FiDownload size="1.2rem" />}
@@ -79,6 +80,7 @@ function HeroSection(): ReactElement {
               <a href="mailto:nishchay13971@gmail.com">
                 <MotionBox
                   as={Button}
+                  variant="btn-black"
                   initial={{ scale: 0.9 }}
                   animate={{ scale: 1 }}
                   isFullWidth={false}

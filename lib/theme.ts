@@ -30,6 +30,16 @@ const components = {
         boxShadow: "0px 0px 5px 0px rgba(182,150,250,0.5)",
       },
     },
+    variants: {
+      "btn-black": {
+        bg: "blackAlpha.900",
+        color: "white",
+        ":hover": {
+          bg: "blackAlpha.800",
+          boxShadow: "md",
+        },
+      },
+    },
   },
   Text: {
     baseStyle: {
