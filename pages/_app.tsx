@@ -12,7 +12,6 @@ import "@fontsource/prata";
 import "../styles/globals.css";
 import { theme } from "../lib/theme";
 import * as gtag from "../lib/gtag";
-import { Global } from "@emotion/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -53,7 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       <ChakraProvider theme={theme}>
         <AnimatePresence>
-          <Component {...pageProps} />
+          <Component key={router.asPath} {...pageProps} />
         </AnimatePresence>
       </ChakraProvider>
     </>
