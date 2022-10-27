@@ -9,7 +9,6 @@ interface NavProp {
 }
 
 function Nav({ isSticky }: NavProp): ReactElement {
-  // console.log(isSticky)
   return (
     <Box
       position="fixed"
@@ -18,16 +17,14 @@ function Nav({ isSticky }: NavProp): ReactElement {
       right={0}
       left={0}
       backdropFilter="blur(10px) saturate(151%)"
-      bg="rgba(24, 24, 24, 0.5)"
       className={isSticky ? "nav sticky-nav" : "nav"}
-      boxShadow={isSticky ? "0 1px 1px rgba(233, 233, 233, 0.1)" : ""}
+      boxShadow={isSticky ? "0 1px 1px rgba(255, 255, 255, 0.1)" : ""}
     >
       <MotionBox
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
-        as={Container}
-        maxW="container.xl"
+        mx={["1rem", "3rem"]}
       >
         <Flex as={"nav"} alignItems="center" justifyContent="space-between">
           <Link href="/">
@@ -44,7 +41,7 @@ function Nav({ isSticky }: NavProp): ReactElement {
               <Text
                 sx={{
                   ":hover": {
-                    color: "white",
+                    color: "black",
                   },
                 }}
               >
@@ -57,7 +54,7 @@ function Nav({ isSticky }: NavProp): ReactElement {
                   ml="1rem"
                   sx={{
                     ":hover": {
-                      color: "white",
+                      color: "black",
                     },
                   }}
                 >

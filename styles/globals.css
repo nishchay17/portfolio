@@ -18,8 +18,8 @@ body {
 }
 
 ::selection {
-  color: #181818;
-  background: #e1e1e1;
+  color: #a8a8a8;
+  background: #424242;
 }
 
 a {
@@ -48,9 +48,56 @@ a {
 
 .nav {
   transition: all 0.7s ease;
-  padding: 16px 0;
+  padding: 12px 0;
 }
 
 .sticky-nav {
-  padding: 8px 0;
+  padding: 6px 0;
+}
+
+.hero-gradient {
+  position: relative;
+}
+
+.hero-gradient::after {
+  transition: opacity 400ms linear;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.7;
+  content: "";
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 1);
+  background-image: radial-gradient(
+      at 92% 6%,
+      hsla(149, 97%, 74%, 0.508) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 6% 92%, rgba(255, 127, 127, 0.407) 0px, transparent 40%),
+    radial-gradient(at 98% 94%, rgba(191, 119, 250, 0.412) 0px, transparent 50%),
+    radial-gradient(at 2% 5%, hsla(226, 100%, 75%, 0.394) 0px, transparent 50%);
+}
+
+@media screen and (max-width: 768px) {
+  .hero-gradient::after {
+    opacity: 1;
+  }
+}
+
+.hero-gradient:hover::after {
+  opacity: 1;
+}
+
+.text-pop {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 14, 221, 1) 0%,
+    rgba(0, 5, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

@@ -30,7 +30,6 @@ function Tech(): ReactElement {
         borderRadius="7px"
         p="1.5rem 1rem"
         backdropFilter="blur(10px) saturate(151%)"
-        bg="rgba(35, 35, 35, 0.20)"
       >
         {children}
         <Text mt="1rem" fontSize="xl">
@@ -41,16 +40,16 @@ function Tech(): ReactElement {
   }
 
   return (
-    <Box as="section" my="2rem">
-      <Container maxW="container.xl">
+    <Box as="section" mt="4rem" py="4rem" bg="blackAlpha.100">
+      <Container maxW="1600px" px={["1rem", "2rem"]}>
         <Heading
           as="h3"
           py="2rem"
           lineHeight="110%"
-          mt="4rem"
-          mb="3rem"
+          mb="2rem"
           fontSize="6xl"
-          letterSpacing="4px"
+          fontWeight={600}
+          textAlign="center"
         >
           Tech that I love and use
         </Heading>

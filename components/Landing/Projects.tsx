@@ -1,15 +1,13 @@
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { Badge, Box, Flex, Grid, Text, Heading } from "@chakra-ui/layout";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
-import { useColorMode } from "@chakra-ui/color-mode";
+import Link from "next/link";
 
 import { Project } from "../../interface/Project";
 import MotionBox from "../MotionBox";
-import { supabase } from "../../lib/supabase";
-import Link from "next/link";
 
 const item = {
   visible: (i: number) => ({
@@ -25,6 +23,7 @@ const item = {
 
 interface ProjectWithIndex extends Project {
   index: number;
+  bg: String;
 }
 
 function ProjectCard({
@@ -34,11 +33,13 @@ function ProjectCard({
   tag,
   id,
   index,
+  bg,
 }: ProjectWithIndex): ReactElement {
   const routrer = useRouter();
   const controls = useAnimation();
   const [ref, inView] = useInView();
-  const { colorMode } = useColorMode();
+
+  const [isMouseIn, setIsMouseIn] = useState(false);
 
   useEffect(() => {
     if (inView) {
@@ -46,19 +47,12 @@ function ProjectCard({
     }
   }, [controls, inView]);
 
-  function getUrl(image: string): string {
-    if (image === "") return "/img/no-img.png";
-    const { publicURL, error } = supabase.storage
-      .from("image")
-      .getPublicUrl(image);
-    if (error || !publicURL) return "/img/no-img.png";
-    return publicURL;
-  }
-
   return (
     <Link href={`/project/${id}`}>
       <a>
         <MotionBox
+          onMouseEnter={() => setIsMouseIn(true)}
+          onMouseLeave={() => setIsMouseIn(false)}
           ref={ref}
           initial="hidden"
           animate={controls}
@@ -68,50 +62,48 @@ function ProjectCard({
           cursor="pointer"
           width={"100%"}
           height={"100%"}
-          backdropFilter="blur(10px) saturate(151%)"
-          bg="rgba(10, 10, 10, 0.3)"
-          color="whiteAlpha.900"
+          bg={bg}
+          sx={{
+            transition: "all 0.7s",
+            ":hover": {
+              bg: bg.split(".")[0] + ".100",
+            },
+          }}
           borderRadius="7px"
-          p="1rem"
+          p={["1rem", "1rem", "1rem", "1.5rem", "2rem"]}
           display="flex"
-          border={"1px solid rgba(233, 233, 233, 0.1)"}
           flexDirection="column"
         >
-          <Box width="100%" display={image ? "block" : ["none", "block"]}>
-            <MotionBox initial={false} layoutId={id}>
-              <Image
-                src={getUrl(image ? image : "")}
-                height={214}
-                width={380}
-                quality={90}
-                alt="project-img"
-                draggable={false}
-              />
-            </MotionBox>
-          </Box>
-          <Flex flex={1} flexDirection="column" justifyContent="space-between">
-            <Box>
-              <Text fontSize="xl" mt={image ? "1rem" : [0, "1rem"]}>
+          <MotionBox initial={false} layoutId={id} position="relative">
+            <Image
+              src={image ? `/img/${image}` : "/img/no-img.png"}
+              height={400}
+              width={708}
+              quality={90}
+              alt={`${image}`}
+              draggable={false}
+            />
+            {isMouseIn && (
+              <MotionBox
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                as="p"
+                position="absolute"
+                top={"50%"}
+                left="50%"
+                textAlign="center"
+                lineHeight="100%"
+                transform="translate(-50%, -50%)"
+                fontSize={["2xl", "2xl", "2xl", "3xl", "4xl"]}
+                fontWeight={600}
+                bg={bg.split(".")[0] + ".300"}
+                p="0.5rem 2rem"
+                borderRadius="7px"
+              >
                 {name}
-              </Text>
-              <Text lineHeight="120%" mt="1rem" noOfLines={3}>
-                {description}
-              </Text>
-            </Box>
-            <Flex mt="1rem" flexWrap="wrap">
-              {tag.split(" ").map((name, idx) => (
-                <Badge
-                  colorScheme="teal"
-                  size="0.7rem"
-                  key={idx}
-                  mt="0.5rem"
-                  mr="0.5rem"
-                >
-                  {name}
-                </Badge>
-              ))}
-            </Flex>
-          </Flex>
+              </MotionBox>
+            )}
+          </MotionBox>
         </MotionBox>
       </a>
     </Link>
@@ -123,22 +115,50 @@ interface Props {
 }
 
 function Projects({ projects }: Props): ReactElement {
+  const colors = ["yellow.50", "red.50", "green.50", "purple.50"];
+  const _projects = projects.map((project, idx) => ({
+    ...project,
+    bg: colors[idx] ?? "blue.50",
+  }));
+
   return (
     <>
       <Box id="projects" />
-      <Box as="section" mb="2rem" transform="translateY(1.5rem)">
-        <Heading as="h3" fontSize="6xl" letterSpacing="4px" py="2rem">
-          Projects
+      <Box
+        mb="2rem"
+        mt={["2rem", "5rem"]}
+        px={["1rem", "2rem"]}
+        pb="2rem"
+        borderRadius="7px"
+        transform="translateY(1.5rem)"
+      >
+        <Heading
+          as="h3"
+          textAlign="center"
+          fontSize={["4xl", "5xl", "6xl"]}
+          py="3.5rem"
+          fontWeight={600}
+          lineHeight={"100%"}
+        >
+          Featured{" "}
+          <Box
+            className="text-pop"
+            as="span"
+            fontSize="inherit"
+            fontWeight={600}
+          >
+            Projects
+          </Box>
         </Heading>
         <Grid
           templateColumns={[
             "repeat(1, 1fr)",
+            "repeat(1, 1fr)",
             "repeat(2, 1fr)",
-            "repeat(3, 1fr)",
           ]}
-          gap="0.8rem"
+          gap="1rem"
         >
-          {projects.map((data, idx) => (
+          {_projects.map((data, idx) => (
             <ProjectCard key={data.id} index={idx} {...data} />
           ))}
         </Grid>

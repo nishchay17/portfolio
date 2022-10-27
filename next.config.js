@@ -8,4 +8,5 @@ module.exports = {
   images: {
     domains: ["bkgsewdluleimqnwhzyo.supabase.co"],
   },
+  productionBrowserSourceMaps: true,
 };

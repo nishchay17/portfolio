@@ -2,15 +2,7 @@ import React, { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, ButtonGroup } from "@chakra-ui/button";
 import { Img } from "@chakra-ui/react";
-import {
-  Badge,
-  Box,
-  Container,
-  Flex,
-  Text,
-  Heading,
-  Code,
-} from "@chakra-ui/layout";
+import { Badge, Box, Container, Flex, Text, Code } from "@chakra-ui/layout";
 import { FiArrowUpRight, FiChevronLeft, FiGithub } from "react-icons/fi";
 import { BsFileEarmarkText } from "react-icons/bs";
 import ReactMarkdown from "react-markdown";
@@ -32,25 +24,25 @@ const markdownTheme = {
   h1: (props: themeProp) => {
     const { children } = props;
     return (
-      <Heading as="h1" fontSize={"4xl"} my={4}>
+      <Text as="h1" fontSize={"4xl"} my={4}>
         {children}
-      </Heading>
+      </Text>
     );
   },
   h2: (props: themeProp) => {
     const { children } = props;
     return (
-      <Heading as="h3" fontSize={"3xl"} my={4}>
+      <Text as="h3" fontSize={"3xl"} my={4}>
         {children}
-      </Heading>
+      </Text>
     );
   },
   h3: (props: themeProp) => {
     const { children } = props;
     return (
-      <Heading as="h3" fontSize={"2xl"} my={3}>
+      <Text as="h3" fontSize={"2xl"} my={3}>
         {children}
-      </Heading>
+      </Text>
     );
   },
   code: (props: themeProp) => {
@@ -58,7 +50,7 @@ const markdownTheme = {
     return (
       <Code
         my={2}
-        bg="#212144"
+        bg="blackAlpha.800"
         color="white"
         py="0.3rem"
         px="0.6rem"
@@ -93,11 +85,6 @@ function ProjectLayout({ project }: Props): ReactElement {
     }/main/README.md`;
   }
 
-  function getUrl(image: string): string | null {
-    const { publicURL } = supabase.storage.from("image").getPublicUrl(image);
-    return publicURL;
-  }
-
   async function fetchReadme(url: string) {
     try {
       const res = await axios.get(url);
@@ -111,6 +98,7 @@ function ProjectLayout({ project }: Props): ReactElement {
   useEffect(() => {
     async function getReadme(githubLink: string) {
       const url = getReadMeUrl(githubLink);
+      console.log({ url });
       setIsLoading(true);
       try {
         const readmeData = await fetchReadme(url);
@@ -125,9 +113,9 @@ function ProjectLayout({ project }: Props): ReactElement {
   }, [project]);
 
   return (
-    <Container maxW="container.xl">
+    <Container maxW="1600px" px={["1rem", "1rem", "1.5rem", "2rem", "3rem"]}>
       <Flex
-        mt="1rem"
+        mt="3rem"
         justifyContent="space-between"
         flexDirection={["column", "row"]}
       >
@@ -135,7 +123,7 @@ function ProjectLayout({ project }: Props): ReactElement {
           <a>
             <Button
               variant="link"
-              colorScheme="teal"
+              colorScheme="black"
               leftIcon={<FiChevronLeft />}
             >
               Back
@@ -144,12 +132,15 @@ function ProjectLayout({ project }: Props): ReactElement {
         </Link>
       </Flex>
       <Flex
+        p="2rem"
+        bg="blue.50"
+        borderRadius="7px"
         my="3rem"
         justifyContent="space-between"
         flexDirection={["column-reverse", "column-reverse", "row"]}
       >
         <Box width={["100%", "100%", "40%"]}>
-          <Text fontSize="5xl" fontWeight="500">
+          <Text fontSize="5xl" letterSpacing="1px" fontWeight="600">
             {project?.name}
           </Text>
           <Flex flexWrap="wrap">
@@ -158,7 +149,7 @@ function ProjectLayout({ project }: Props): ReactElement {
                 mt="0.3rem"
                 key={idx}
                 mr="0.5rem"
-                colorScheme="teal"
+                colorScheme="blackAlpha"
                 fontSize="0.85rem"
               >
                 {name}
@@ -167,7 +158,7 @@ function ProjectLayout({ project }: Props): ReactElement {
           </Flex>
           <Box mt="1rem">
             <Text>{project?.description}</Text>
-            <ButtonGroup colorScheme="teal" mt="2rem">
+            <ButtonGroup variant="btn-black" mt="2rem">
               {project?.github && (
                 <a
                   href={project?.github}
@@ -193,12 +184,11 @@ function ProjectLayout({ project }: Props): ReactElement {
           <MotionBox
             as={Img}
             fallback={<Text>Loading Image...</Text>}
-            layoutId={project?.id}
             draggable={false}
             borderRadius="7px"
-            border="0.2rem solid"
-            borderColor="teal"
-            src={getUrl(project.image)}
+            border="3px solid"
+            borderColor="blackAlpha"
+            src={`/img/${project.image}`}
             alt={project?.id}
             width={["100%", "100%", "50%"]}
             mb={["2rem", "2rem", 0]}
@@ -207,7 +197,7 @@ function ProjectLayout({ project }: Props): ReactElement {
       </Flex>
       {isLoading && <>Loading Additional information</>}
       {readme && (
-        <Box padding="1rem" mb="3rem">
+        <Box p="2rem" mb="3rem" bg="yellow.100" borderRadius="7px">
           <Box mb="1.5rem">
             <Flex alignItems="center" mb="0.5rem">
               <Text fontSize="1.75rem" mr="0.7rem">

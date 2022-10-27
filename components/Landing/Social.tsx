@@ -4,7 +4,7 @@ import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 
 function Social(): ReactElement {
   return (
-    <Box as="footer" mt="4rem" width="100%">
+    <Box as="footer" width="100%" bg="blackAlpha.900">
       <Container py={["1.5rem", "2rem"]} maxW="container.xl" color="white">
         <Flex alignContent="center" justifyContent="space-between">
           <Text fontSize="2xl" lineHeight={["115%", "130%"]}>

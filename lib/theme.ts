@@ -12,13 +12,14 @@ const config: ThemeConfig = {
 const fonts = {
   ...chakraTheme.fonts,
   body: `'Source Sans Pro', sans-serif`,
-  heading: `'Refinest', serif`,
+  heading: `"Cormorant Garamond", serif`,
 };
 
 const components = {
   Heading: {
     baseStyle: {
-      fontWeight: "400",
+      fontWeight: "500",
+      letterSpacing: "1px",
     },
   },
   Button: {
@@ -27,6 +28,16 @@ const components = {
       boxShadow: "0px 0px 3px 0px rgba(182,150,250,0.5)",
       _hover: {
         boxShadow: "0px 0px 5px 0px rgba(182,150,250,0.5)",
+      },
+    },
+    variants: {
+      "btn-black": {
+        bg: "blackAlpha.900",
+        color: "white",
+        ":hover": {
+          bg: "blackAlpha.800",
+          boxShadow: "md",
+        },
       },
     },
   },
@@ -40,8 +51,7 @@ const components = {
 const styles = {
   global: {
     body: {
-      bg: "#181818",
-      color: "#e1e1e1",
+      color: "#1d1d1d",
     },
   },
 };
