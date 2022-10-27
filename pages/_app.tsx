@@ -6,8 +6,10 @@ import { useEffect } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 import "@fontsource/source-sans-pro";
-import "@fontsource/ibm-plex-serif";
-import "@fontsource/prata";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/cormorant-garamond/500.css";
+import "@fontsource/cormorant-garamond/600.css";
+import "@fontsource/cormorant-garamond/700.css";
 
 import "../styles/globals.css";
 import { theme } from "../lib/theme";

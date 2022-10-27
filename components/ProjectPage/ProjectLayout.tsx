@@ -7,11 +7,9 @@ import { FiArrowUpRight, FiChevronLeft, FiGithub } from "react-icons/fi";
 import { BsFileEarmarkText } from "react-icons/bs";
 import ReactMarkdown from "react-markdown";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import axios from "axios";
 
 import { Project } from "../../interface/Project";
 import MotionBox from "../MotionBox";
-import { supabase } from "../../lib/supabase";
 interface Props {
   project: Project;
 }
@@ -87,10 +85,11 @@ function ProjectLayout({ project }: Props): ReactElement {
 
   async function fetchReadme(url: string) {
     try {
-      const res = await axios.get(url);
-      return res.data;
+      const res = await fetch(url);
+      const data = await res.text();
+      return data;
     } catch (error) {
-      console.error(error);
+      console.error({ error });
       return "";
     }
   }
@@ -98,7 +97,6 @@ function ProjectLayout({ project }: Props): ReactElement {
   useEffect(() => {
     async function getReadme(githubLink: string) {
       const url = getReadMeUrl(githubLink);
-      console.log({ url });
       setIsLoading(true);
       try {
         const readmeData = await fetchReadme(url);
@@ -119,7 +117,7 @@ function ProjectLayout({ project }: Props): ReactElement {
         justifyContent="space-between"
         flexDirection={["column", "row"]}
       >
-        <Link href="/#projects">
+        <Link href="/">
           <a>
             <Button
               variant="link"

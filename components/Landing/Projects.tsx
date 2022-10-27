@@ -140,15 +140,7 @@ function Projects({ projects }: Props): ReactElement {
           fontWeight={600}
           lineHeight={"100%"}
         >
-          Featured{" "}
-          <Box
-            className="text-pop"
-            as="span"
-            fontSize="inherit"
-            fontWeight={600}
-          >
-            Projects
-          </Box>
+          Featured Projects
         </Heading>
         <Grid
           templateColumns={[

@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
-import { Box, Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 
 import MotionBox from "./MotionBox";
 

@@ -1,8 +1,8 @@
 import React, { ReactElement, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 import ProjectLayout from "../../components/ProjectPage/ProjectLayout";
 import Layout from "../../components/Layout";
-import { useRouter } from "next/router";
 import { projects } from "../../config/project";
 import { Project } from "../../interface/Project";
 
