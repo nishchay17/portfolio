@@ -1,8 +1,3 @@
-import "@fontsource/cormorant-garamond/400.css";
-import "@fontsource/cormorant-garamond/500.css";
-import "@fontsource/cormorant-garamond/600.css";
-import "@fontsource/cormorant-garamond/700.css";
-
 import { ReactElement } from "react";
 import dynamic from "next/dynamic";
 import { Container } from "@chakra-ui/layout";
