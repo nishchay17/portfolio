@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="description" content="Nishchay17 Portfolio" />
-        <meta name="theme-color" content="#469895" />
+        <meta name="theme-color" content="#322f31" />
         <link rel="icon" href="/svg/logo.svg" />
       </Head>
       <Script
