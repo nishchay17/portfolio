@@ -4,9 +4,9 @@ export const projects = [
     name: "Team Collab",
     description:
       "Collaborate with Team with team collab. Assign and monitor tasks and share files with the team.",
-    github: "https://github.com/nishchay17/teams-frontend",
-    live: "https://teams-task.netlify.app/",
-    tag: "React Node MongoDB Express",
+    github: "https://github.com/nishchay17/teams-frontend-v2",
+    live: "https://teams-frontend.vercel.app/",
+    tag: "Next Tailwind Node MongoDB Express",
     image: "team-collab.png",
   },
   {
