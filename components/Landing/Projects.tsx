@@ -76,6 +76,7 @@ function ProjectCard({
         >
           <MotionBox initial={false} layoutId={id} position="relative">
             <Image
+              objectFit="cover"
               src={image ? `/img/${image}` : "/img/no-img.png"}
               height={400}
               width={708}
