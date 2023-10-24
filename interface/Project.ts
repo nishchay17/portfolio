@@ -6,4 +6,7 @@ export type Project = {
   github?: string;
   live?: string;
   tag: string;
+  bg?: string;
+  createdOn: string;
+  additionalTags?: Readonly<string[]>;
 };

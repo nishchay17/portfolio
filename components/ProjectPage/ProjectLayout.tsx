@@ -112,7 +112,7 @@ function ProjectLayout({ project }: Props): ReactElement {
   }, [project]);
 
   return (
-    <Container maxW="1600px" px={["1rem", "1rem", "1.5rem", "2rem", "3rem"]}>
+    <Container maxW="container.xl">
       <Flex
         mt="3rem"
         justifyContent="space-between"
@@ -121,9 +121,10 @@ function ProjectLayout({ project }: Props): ReactElement {
         <Link href="/">
           <a>
             <Button
-              variant="link"
-              colorScheme="black"
+              shadow="none"
+              variant="outline"
               leftIcon={<FiChevronLeft />}
+              size="sm"
             >
               Back
             </Button>
@@ -132,7 +133,6 @@ function ProjectLayout({ project }: Props): ReactElement {
       </Flex>
       <Flex
         p="2rem"
-        bg="blue.50"
         borderRadius="7px"
         my="3rem"
         justifyContent="space-between"
@@ -142,8 +142,19 @@ function ProjectLayout({ project }: Props): ReactElement {
           <Text fontSize="5xl" letterSpacing="1px" fontWeight="600">
             {project?.name}
           </Text>
-          <Flex flexWrap="wrap">
-            {project?.tag.split(" ").map((name, idx) => (
+          <Flex flexWrap="wrap" mb="0.5rem">
+            {project?.additionalTags?.map((name, idx) => (
+              <Badge
+                mt="0.3rem"
+                key={idx}
+                mr="0.5rem"
+                colorScheme="purple"
+                fontSize="0.85rem"
+              >
+                {name}
+              </Badge>
+            ))}
+            {project?.tag.split(",").map((name, idx) => (
               <Badge
                 mt="0.3rem"
                 key={idx}
@@ -155,6 +166,7 @@ function ProjectLayout({ project }: Props): ReactElement {
               </Badge>
             ))}
           </Flex>
+          <Text fontSize="lg">Created on: {project.createdOn}</Text>
           <Box mt="1rem">
             <Text>{project?.description}</Text>
             <ButtonGroup variant="btn-black" mt="2rem">
@@ -164,7 +176,9 @@ function ProjectLayout({ project }: Props): ReactElement {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button leftIcon={<FiGithub />}>Github</Button>
+                  <Button leftIcon={<FiGithub />} size="sm">
+                    Github
+                  </Button>
                 </a>
               )}
               {project?.live && (
@@ -173,7 +187,9 @@ function ProjectLayout({ project }: Props): ReactElement {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button leftIcon={<FiArrowUpRight />}>Live</Button>
+                  <Button leftIcon={<FiArrowUpRight />} size="sm">
+                    Live
+                  </Button>
                 </a>
               )}
             </ButtonGroup>
@@ -185,8 +201,8 @@ function ProjectLayout({ project }: Props): ReactElement {
             fallback={<Text>Loading Image...</Text>}
             draggable={false}
             borderRadius="7px"
-            border="3px solid"
-            borderColor="blackAlpha"
+            border="1px"
+            borderColor="blackAlpha.300"
             src={`/img/${project.image}`}
             alt={project?.id}
             width={["100%", "100%", "50%"]}
@@ -196,7 +212,14 @@ function ProjectLayout({ project }: Props): ReactElement {
       </Flex>
       {isLoading && <>Loading Additional information</>}
       {readme && (
-        <Box p="2rem" mb="3rem" bg="yellow.100" borderRadius="7px">
+        <Box
+          p="2rem"
+          mb="3rem"
+          bg="yellow.50"
+          borderRadius="7px"
+          border="1px solid"
+          borderColor="blackAlpha.300"
+        >
           <Box mb="1.5rem">
             <Flex alignItems="center" mb="0.5rem">
               <Text fontSize="1.75rem" mr="0.7rem">

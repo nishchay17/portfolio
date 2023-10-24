@@ -14,11 +14,6 @@ body {
   scroll-behavior: smooth;
 }
 
-::selection {
-  color: #a8a8a8;
-  background: #424242;
-}
-
 a {
   color: inherit;
   text-decoration: none;

@@ -1,91 +1,45 @@
 import React, { ReactElement } from "react";
-import { Box, Container, Flex, Text, Grid, Heading } from "@chakra-ui/layout";
-import {
-  SiNextdotjs,
-  SiReact,
-  SiChakraui,
-  SiTypescript,
-  SiNodedotjs,
-  SiExpress,
-  SiBootstrap,
-  SiJavascript,
-} from "react-icons/si";
+import { Box, Container, Flex, Text, Heading } from "@chakra-ui/layout";
+
+import TECH from "../../config/tech";
 
 interface TechNameProp {
   name: string;
-  children: ReactElement;
 }
 
 function Tech(): ReactElement {
-  function Techname({ name, children }: TechNameProp): ReactElement {
+  function Techname({ name }: TechNameProp): ReactElement {
     return (
-      <Flex
-        px="1.5rem"
-        justifyContent="center"
-        alignItems="center"
-        height="100%"
-        width="100%"
-        flexDirection="column"
-        border="1px solid rgba(233, 233, 233, 0.1)"
+      <Text
+        border="1px"
         borderRadius="7px"
-        p="1.5rem 1rem"
-        backdropFilter="blur(10px) saturate(151%)"
+        px="0.75rem"
+        py="0.1rem"
+        fontSize="md"
+        borderColor="blackAlpha.300"
       >
-        {children}
-        <Text mt="1rem" fontSize="xl">
-          {name}
-        </Text>
-      </Flex>
+        {name}
+      </Text>
     );
   }
 
   return (
-    <Box as="section" mt="4rem" py="4rem" bg="blackAlpha.100">
-      <Container maxW="1600px" px={["1rem", "2rem"]}>
+    <Box as="section" mt="4rem" py={["4rem", "5rem"]}>
+      <Container maxW="container.xl">
         <Heading
-          mb="2rem"
           as="h3"
-          textAlign="center"
           fontSize={["4xl", "5xl", "6xl"]}
-          py={["2rem", "3.5rem"]}
           fontWeight={600}
           lineHeight={"100%"}
+          mb="1.5rem"
         >
           Tech that I love and use
         </Heading>
-        <Grid
-          templateColumns={[
-            "repeat(2, 1fr)",
-            "repeat(3, 1fr)",
-            "repeat(4, 1fr)",
-          ]}
-          gap={["1rem", "1.5rem"]}
-        >
-          <Techname name="Next js">
-            <SiNextdotjs size="5rem" />
-          </Techname>
-          <Techname name="React js">
-            <SiReact size="5rem" />
-          </Techname>
-          <Techname name="Chakra UI">
-            <SiChakraui size="5rem" />
-          </Techname>
-          <Techname name="Typescript">
-            <SiTypescript size="5rem" />
-          </Techname>
-          <Techname name="Node js">
-            <SiNodedotjs size="5rem" />
-          </Techname>
-          <Techname name="Express">
-            <SiExpress size="5rem" />
-          </Techname>
-          <Techname name="Javascript">
-            <SiJavascript size="5rem" />
-          </Techname>
-          <Techname name="Bootstrap">
-            <SiBootstrap size="5rem" />
-          </Techname>
-        </Grid>
+        <Flex gap="1rem" rowGap="0.75rem" wrap="wrap">
+          {TECH.map((tech) => (
+            <Techname key={tech} name={tech} />
+          ))}
+        </Flex>
       </Container>
     </Box>
   );

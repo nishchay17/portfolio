@@ -8,14 +8,13 @@ const Tech = dynamic(() => import("../components/Landing/Tech"));
 const Social = dynamic(() => import("../components/Landing/Social"));
 
 import Layout from "../components/Layout";
-import { projects } from "../config/project";
 
 function Home(): ReactElement {
   return (
     <Layout withAnimation={false}>
       <HeroSection />
-      <Container maxW="1600px" px={[0, 0, 0, 0, "2rem"]}>
-        <Projects projects={projects} />
+      <Container maxW="container.xl">
+        <Projects />
       </Container>
       <Tech />
       <Social />

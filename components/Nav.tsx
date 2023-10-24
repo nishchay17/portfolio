@@ -48,20 +48,22 @@ function Nav({ isSticky }: NavProp): ReactElement {
                 Linkedin
               </Text>
             </a>
-            <Link href="/#projects">
-              <a>
-                <Text
-                  ml="1rem"
-                  sx={{
-                    ":hover": {
-                      color: "black",
-                    },
-                  }}
-                >
-                  Projects
-                </Text>
-              </a>
-            </Link>
+            <a
+              href="https://planet-blog.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Text
+                ml="1rem"
+                sx={{
+                  ":hover": {
+                    color: "black",
+                  },
+                }}
+              >
+                Blog
+              </Text>
+            </a>
           </Flex>
         </Flex>
       </MotionBox>
