@@ -2,7 +2,7 @@ import React, { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, ButtonGroup } from "@chakra-ui/button";
 import { Img } from "@chakra-ui/react";
-import { Badge, Box, Container, Flex, Text, Code } from "@chakra-ui/layout";
+import { Badge, Box, Container, Flex, Text } from "@chakra-ui/layout";
 import { FiArrowUpRight, FiChevronLeft, FiGithub } from "react-icons/fi";
 import { BsFileEarmarkText } from "react-icons/bs";
 import ReactMarkdown from "react-markdown";
@@ -91,8 +91,8 @@ function ProjectLayout({ project }: Props): ReactElement {
       return data;
     } catch (error) {
       console.error(error);
-      return "";
     }
+    return "";
   }
 
   useEffect(() => {

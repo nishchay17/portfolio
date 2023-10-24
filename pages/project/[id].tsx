@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement } from "react";
 import { useRouter } from "next/router";
 
 import ProjectLayout from "../../components/ProjectPage/ProjectLayout";
@@ -8,19 +8,24 @@ import { Project } from "../../interface/Project";
 
 function Project(): ReactElement {
   const router = useRouter();
-  const [project, setProject] = useState<Project | null>(null);
   const { id } = router.query;
+  let project: Project = {
+    id: 99,
+    name: "No project found",
+    description: "No project with this Id found",
+    tag: "",
+  };
 
-  useEffect(() => {
-    if (!id) {
-      return;
+  if (id) {
+    const currentProject = projects.find((project) => project.id == +id);
+    if (!!currentProject) {
+      project = currentProject;
     }
-    setProject(projects.filter((project) => project.id == +id)[0]);
-  }, [router.query, id]);
+  }
 
   return (
     <Layout title="Project">
-      {project === null ? <></> : <ProjectLayout project={project} />}
+      {!project ? <></> : <ProjectLayout project={project} />}
     </Layout>
   );
 }
