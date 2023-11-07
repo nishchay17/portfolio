@@ -28,9 +28,7 @@ function Nav({ isSticky }: NavProp): ReactElement {
       >
         <Flex as={"nav"} alignItems="center" justifyContent="space-between">
           <Link href="/">
-            <a>
-              <h1>Nishchay17</h1>
-            </a>
+            <h1>Nishchay17</h1>
           </Link>
           <Flex alignItems="center">
             <a

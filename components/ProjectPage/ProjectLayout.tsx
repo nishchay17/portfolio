@@ -63,10 +63,8 @@ const markdownTheme = {
     const { children, href } = props;
     if (href)
       return (
-        <Link href={href}>
-          <a target={"_blank"} rel="noreferrer">
-            {children}
-          </a>
+        <Link href={href} target={"_blank"} rel="noreferrer">
+          {children}
         </Link>
       );
     else return <a>{children}</a>;
@@ -119,16 +117,14 @@ function ProjectLayout({ project }: Props): ReactElement {
         flexDirection={["column", "row"]}
       >
         <Link href="/">
-          <a>
-            <Button
-              shadow="none"
-              variant="outline"
-              leftIcon={<FiChevronLeft />}
-              size="sm"
-            >
-              Back
-            </Button>
-          </a>
+          <Button
+            shadow="none"
+            variant="outline"
+            leftIcon={<FiChevronLeft />}
+            size="sm"
+          >
+            Back
+          </Button>
         </Link>
       </Flex>
       <Flex
