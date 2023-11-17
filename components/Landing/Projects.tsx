@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactElement, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,53 +48,51 @@ function ProjectCard({
 
   return (
     <Link href={`/project/${id}`}>
-      <a>
-        <MotionBox
-          ref={ref}
-          initial="hidden"
-          animate={controls}
-          variants={item}
-          custom={index}
-          cursor="pointer"
-          width={"100%"}
-          height={"100%"}
-          borderRadius="7px"
-          border="1px"
-          borderColor="blackAlpha.300"
-          overflow="hidden"
-        >
-          <MotionBox initial={false} layoutId={id} position="relative">
-            <Image
-              objectFit="cover"
-              src={image ? `/img/${image}` : "/img/no-img.png"}
-              height={400}
-              width={708}
-              quality={100}
-              alt={`${image}`}
-              draggable={false}
-            />
-          </MotionBox>
-          <Box
-            borderTop="1px"
-            borderColor="blackAlpha.300"
-            mt={-1.5}
-            px="1rem"
-            pb="1rem"
-            bg={bg}
-            h="full"
-          >
-            <Flex gap="0.5rem" alignItems="center" mt="1rem">
-              <Text fontSize="xl">{name}</Text>
-              {additionalTags?.map((tag) => (
-                <Badge colorScheme="purple" key={tag}>
-                  {tag}
-                </Badge>
-              ))}
-            </Flex>
-            <Text>{description}</Text>
-          </Box>
+      <MotionBox
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={item}
+        custom={index}
+        cursor="pointer"
+        width={"100%"}
+        height={"100%"}
+        borderRadius="7px"
+        border="1px"
+        borderColor="blackAlpha.300"
+        overflow="hidden"
+      >
+        <MotionBox initial={false} layoutId={id} position="relative">
+          <Image
+            style={{ objectFit: "cover" }}
+            src={image ? `/img/${image}` : "/img/no-img.png"}
+            height={400}
+            width={708}
+            quality={100}
+            alt={`${image}`}
+            draggable={false}
+          />
         </MotionBox>
-      </a>
+        <Box
+          borderTop="1px"
+          borderColor="blackAlpha.300"
+          mt={-1.5}
+          px="1rem"
+          pb="1rem"
+          bg={bg}
+          h="full"
+        >
+          <Flex gap="0.5rem" alignItems="center" mt="1rem">
+            <Text fontSize="xl">{name}</Text>
+            {additionalTags?.map((tag) => (
+              <Badge colorScheme="purple" key={tag}>
+                {tag}
+              </Badge>
+            ))}
+          </Flex>
+          <Text>{description}</Text>
+        </Box>
+      </MotionBox>
     </Link>
   );
 }
@@ -118,7 +118,7 @@ function Projects(): ReactElement {
           textAlign="center"
           fontSize={["4xl", "5xl", "6xl"]}
           py="3.5rem"
-          fontWeight={600}
+          fontWeight={500}
           lineHeight={"100%"}
         >
           Featured Projects

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, ButtonGroup } from "@chakra-ui/button";
@@ -63,10 +65,8 @@ const markdownTheme = {
     const { children, href } = props;
     if (href)
       return (
-        <Link href={href}>
-          <a target={"_blank"} rel="noreferrer">
-            {children}
-          </a>
+        <Link href={href} target={"_blank"} rel="noreferrer">
+          {children}
         </Link>
       );
     else return <a>{children}</a>;
@@ -119,16 +119,14 @@ function ProjectLayout({ project }: Props): ReactElement {
         flexDirection={["column", "row"]}
       >
         <Link href="/">
-          <a>
-            <Button
-              shadow="none"
-              variant="outline"
-              leftIcon={<FiChevronLeft />}
-              size="sm"
-            >
-              Back
-            </Button>
-          </a>
+          <Button
+            shadow="none"
+            variant="outline"
+            leftIcon={<FiChevronLeft />}
+            size="sm"
+          >
+            Back
+          </Button>
         </Link>
       </Flex>
       <Flex
@@ -166,7 +164,9 @@ function ProjectLayout({ project }: Props): ReactElement {
               </Badge>
             ))}
           </Flex>
-          <Text fontSize="lg">Created on: {project.createdOn}</Text>
+          {!!project?.createdOn ? (
+            <Text fontSize="lg">Created on: {project.createdOn}</Text>
+          ) : null}
           <Box mt="1rem">
             <Text>{project?.description}</Text>
             <ButtonGroup variant="btn-black" mt="2rem">
