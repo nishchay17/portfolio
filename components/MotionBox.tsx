@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactElement } from "react";
 import { Box, BoxProps } from "@chakra-ui/layout";
 import { motion } from "framer-motion";

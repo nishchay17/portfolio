@@ -7,6 +7,6 @@ export type Project = {
   live?: string;
   tag: string;
   bg?: string;
-  createdOn: string;
+  createdOn?: string;
   additionalTags?: Readonly<string[]>;
 };

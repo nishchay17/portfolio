@@ -2,30 +2,7 @@ import React, { ReactElement } from "react";
 import { Box, Flex, Text, List, ListItem, ListIcon } from "@chakra-ui/react";
 import { FiMinus } from "react-icons/fi";
 
-const exps = [
-  {
-    company: "Homelane",
-    title: "Software Engineer Intern",
-    date: "Jan 2022 - Present",
-    points: [
-      "Worked on developing dashboard using React js and SCSS",
-      "Migrated vanilla javascript code to React js code",
-      "Fixed existing bugs and added functionalities in dashboards",
-      "Converted design to pixel-perfect components",
-    ],
-  },
-  {
-    company: "The Internet Folks",
-    title: "Software Engineer Intern",
-    date: "Dec 2020 - June 2021",
-    points: [
-      "Used Next js (react js) with server-side rendering",
-      "Used Redux (Redux toolkit) for state management",
-      "Converted UI design to reusable, scalable react components",
-      "Implemented Debouncing to reduce API calls",
-    ],
-  },
-];
+import { experience } from "../../config/experience";
 
 function Experience(): ReactElement {
   return (
@@ -34,7 +11,7 @@ function Experience(): ReactElement {
         Experience
       </Text>
 
-      {exps.map(({ company, title, points, date }) => {
+      {experience.map(({ company, title, points, date }) => {
         return (
           <Box key={date} mb="2rem">
             <Box

@@ -1,12 +1,10 @@
 import { ReactElement } from "react";
-import dynamic from "next/dynamic";
 import { Container } from "@chakra-ui/layout";
 
-const HeroSection = dynamic(() => import("../components/Landing/HeroSection"));
-const Projects = dynamic(() => import("../components/Landing/Projects"));
-const Tech = dynamic(() => import("../components/Landing/Tech"));
-const Social = dynamic(() => import("../components/Landing/Social"));
-
+import HeroSection from "../components/Landing/HeroSection";
+import Projects from "../components/Landing/Projects";
+import Tech from "../components/Landing/Tech";
+import Social from "../components/Landing/Social";
 import Layout from "../components/Layout";
 
 function Home(): ReactElement {

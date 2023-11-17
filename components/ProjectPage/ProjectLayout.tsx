@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button, ButtonGroup } from "@chakra-ui/button";
@@ -162,7 +164,9 @@ function ProjectLayout({ project }: Props): ReactElement {
               </Badge>
             ))}
           </Flex>
-          <Text fontSize="lg">Created on: {project.createdOn}</Text>
+          {!!project?.createdOn ? (
+            <Text fontSize="lg">Created on: {project.createdOn}</Text>
+          ) : null}
           <Box mt="1rem">
             <Text>{project?.description}</Text>
             <ButtonGroup variant="btn-black" mt="2rem">

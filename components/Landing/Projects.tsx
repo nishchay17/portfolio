@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactElement, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -116,7 +118,7 @@ function Projects(): ReactElement {
           textAlign="center"
           fontSize={["4xl", "5xl", "6xl"]}
           py="3.5rem"
-          fontWeight={600}
+          fontWeight={500}
           lineHeight={"100%"}
         >
           Featured Projects
