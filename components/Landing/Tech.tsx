@@ -29,7 +29,7 @@ function Tech(): ReactElement {
         <Heading
           as="h3"
           fontSize={["4xl", "5xl", "6xl"]}
-          fontWeight={600}
+          fontWeight={500}
           lineHeight={"100%"}
           mb="1.5rem"
         >

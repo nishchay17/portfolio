@@ -35,7 +35,7 @@ function HeroSection(): ReactElement {
                 fontSize={["2.75rem", "3rem", "4rem", "6vw"]}
                 letterSpacing="1px"
                 lineHeight={1}
-                fontWeight={600}
+                fontWeight={500}
                 textAlign="center"
               >
                 Hello there <br /> I am Nishchay
@@ -46,7 +46,7 @@ function HeroSection(): ReactElement {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
               as={Text}
-              fontSize={["1.1rem", "1.2rem", "1.4rem", "1.5rem", "1.5vw"]}
+              fontSize={["1.1rem", "1.2rem", "1.3rem", "1.4rem", "1.4vw"]}
               mt="1rem"
               color="blackAlpha.800"
               lineHeight="120%"
@@ -70,7 +70,6 @@ function HeroSection(): ReactElement {
               >
                 <Button
                   variant="btn-black"
-                  isFullWidth={false}
                   leftIcon={<FiDownload size="1.2rem" />}
                   size="sm"
                 >
@@ -84,7 +83,6 @@ function HeroSection(): ReactElement {
                   variant="btn-black"
                   initial={{ scale: 0.9 }}
                   animate={{ scale: 1 }}
-                  isFullWidth={false}
                   leftIcon={<FiMail size="1.2rem" />}
                   ml={[0, "1rem"]}
                   mt={["1rem", 0]}

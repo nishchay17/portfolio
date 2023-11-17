@@ -1,14 +1,13 @@
+"use client";
+
 import React, { ReactElement, useState } from "react";
-import Head from "next/head";
 import { Waypoint } from "react-waypoint";
 
 import MotionBox from "./MotionBox";
 import Nav from "./Nav";
 interface Props {
   children: ReactElement[] | ReactElement;
-  title: string;
-  withAuth: boolean;
-  withAnimation: boolean;
+  withAnimation?: boolean;
 }
 
 const variants = {
@@ -16,12 +15,8 @@ const variants = {
   enter: { opacity: 1, x: 0, y: 0 },
   exit: { opacity: 0, x: 0, y: -100 },
 };
-function Layout({
-  children,
-  title,
-  withAuth,
-  withAnimation,
-}: Props): ReactElement {
+
+function Layout({ children, withAnimation = false }: Props): ReactElement {
   const [isSticky, setIsSticky] = useState<boolean>(false);
 
   const setSticky = () => {
@@ -52,9 +47,6 @@ function Layout({
       exit="exit"
       transition={{ type: "linear", duration: 0.45 }}
     >
-      <Head>
-        <title>{title !== "" ? `Nishchay | ${title}` : "Nishchay"}</title>
-      </Head>
       <Waypoint
         onEnter={removeSticky}
         onPositionChange={onWaypointPositionChange}
@@ -64,11 +56,5 @@ function Layout({
     </MotionBox>
   );
 }
-
-Layout.defaultProps = {
-  title: "",
-  withAuth: false,
-  withAnimation: true,
-};
 
 export default Layout;
