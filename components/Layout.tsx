@@ -16,7 +16,7 @@ const variants = {
   exit: { opacity: 0, x: 0, y: -100 },
 };
 
-function Layout({ children, withAnimation = false }: Props): ReactElement {
+function Layout({ children, withAnimation = false }: Props) {
   const [isSticky, setIsSticky] = useState<boolean>(false);
 
   const setSticky = () => {
@@ -47,6 +47,7 @@ function Layout({ children, withAnimation = false }: Props): ReactElement {
       exit="exit"
       transition={{ type: "linear", duration: 0.45 }}
     >
+      {/* @ts-expect-error Server Component */}
       <Waypoint
         onEnter={removeSticky}
         onPositionChange={onWaypointPositionChange}
