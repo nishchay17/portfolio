@@ -9,7 +9,6 @@ import { useAnimation } from "framer-motion";
 
 import { Project } from "../../interface/Project";
 import MotionBox from "../MotionBox";
-import { projects } from "../../config/project";
 
 const item = {
   visible: (i: number) => ({
@@ -83,7 +82,9 @@ function ProjectCard({
           h="full"
         >
           <Flex gap="0.5rem" alignItems="center" mt="1rem">
-            <Text fontSize="xl">{name}</Text>
+            <Text fontSize="xl" as="h3">
+              {name}
+            </Text>
             {additionalTags?.map((tag) => (
               <Badge colorScheme="purple" key={tag}>
                 {tag}
@@ -97,7 +98,7 @@ function ProjectCard({
   );
 }
 
-function Projects(): ReactElement {
+function Projects({ projects }: { projects: Project[] }): ReactElement {
   const _projects = projects.map((project) => ({
     ...project,
     bg: project.bg ?? "blue.50",
