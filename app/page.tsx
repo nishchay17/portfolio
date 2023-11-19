@@ -6,7 +6,9 @@ import Projects from "../components/Landing/Projects";
 import Tech from "../components/Landing/Tech";
 import Social from "../components/Landing/Social";
 import Layout from "../components/Layout";
+
 import { projects } from "../config/project";
+import TECH from "../config/tech";
 
 function Home(): ReactElement {
   return (
@@ -15,7 +17,7 @@ function Home(): ReactElement {
       <Container maxW="container.xl">
         <Projects projects={[...projects]} />
       </Container>
-      <Tech />
+      <Tech techs={[...TECH]} />
       <Social />
     </Layout>
   );

@@ -1,13 +1,11 @@
 import React, { ReactElement } from "react";
 import { Box, Container, Flex, Text, Heading } from "@chakra-ui/layout";
 
-import TECH from "../../config/tech";
-
 interface TechNameProp {
   name: string;
 }
 
-function Tech(): ReactElement {
+function Tech({ techs }: { techs: string[] }): ReactElement {
   function Techname({ name }: TechNameProp): ReactElement {
     return (
       <Text
@@ -36,7 +34,7 @@ function Tech(): ReactElement {
           Tech that I love and use
         </Heading>
         <Flex gap="1rem" rowGap="0.75rem" wrap="wrap">
-          {TECH.map((tech) => (
+          {techs.map((tech) => (
             <Techname key={tech} name={tech} />
           ))}
         </Flex>
