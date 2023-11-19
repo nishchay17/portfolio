@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test for the home page renders hero section unchanged 1`] = `
+<div>
+  <div
+    class="hero-gradient css-13wcptj"
+  >
+    <div
+      class="chakra-container css-tflc3m"
+    >
+      <div
+        class="css-ywmrlf"
+      >
+        <section
+          class="css-11415zu"
+        >
+          <div
+            class="css-1hdxvq"
+            style="opacity: 0;"
+          >
+            <h2
+              class="chakra-heading css-1cpwwbq"
+            >
+              Hello there 
+              <br />
+               I am Nishchay
+            </h2>
+          </div>
+          <p
+            class="chakra-text css-vhh176"
+            style="opacity: 0;"
+          >
+            A full stack developer, 
+            <br />
+             designing and developing web
+          </p>
+          <div
+            class="css-mnxqz0"
+            style="opacity: 0;"
+          >
+            <a
+              href="https://drive.google.com/file/d/1-7CpbSBjYeO_JVNptblRzkcKF0uPHee8/view?usp=sharing"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <button
+                class="chakra-button css-4xx2wk"
+                type="button"
+              >
+                <span
+                  class="chakra-button__icon css-1wh2kri"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="1.2rem"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="1.2rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                    />
+                    <polyline
+                      points="7 10 12 15 17 10"
+                    />
+                    <line
+                      x1="12"
+                      x2="12"
+                      y1="15"
+                      y2="3"
+                    />
+                  </svg>
+                </span>
+                Download Resume
+              </button>
+            </a>
+            <a
+              href="mailto:nishchay13971@gmail.com"
+            >
+              <button
+                class="chakra-button css-1u3yts"
+                style="transform: scale(0.9) translateZ(0);"
+                type="button"
+              >
+                <span
+                  class="chakra-button__icon css-1wh2kri"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="1.2rem"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="1.2rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline
+                      points="22,6 12,13 2,6"
+                    />
+                  </svg>
+                </span>
+                Get In Touch
+              </button>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`snapshot test for the home page renders social section unchanged 1`] = `
+<div>
+  <footer
+    class="css-1a20jyo"
+  >
+    <div
+      class="chakra-container css-6cxldr"
+    >
+      <div
+        class="css-4kyngj"
+      >
+        <p
+          class="chakra-text css-daadta"
+        >
+          Let's Connect
+        </p>
+        <div
+          class="css-14dv58r"
+        >
+          <a
+            aria-label="github"
+            href="https://github.com/nishchay17"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              fill="none"
+              height="2rem"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="2rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              />
+            </svg>
+          </a>
+          <a
+            aria-label="instagram"
+            href="https://www.instagram.com/nishchay17"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              fill="none"
+              height="2rem"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="2rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="20"
+                rx="5"
+                ry="5"
+                width="20"
+                x="2"
+                y="2"
+              />
+              <path
+                d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+              />
+              <line
+                x1="17.5"
+                x2="17.51"
+                y1="6.5"
+                y2="6.5"
+              />
+            </svg>
+          </a>
+          <a
+            aria-label="linkedin"
+            href="https://www.linkedin.com/in/nishchay-trivedi-61219978"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              fill="none"
+              height="2rem"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="2rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect
+                height="12"
+                width="4"
+                x="2"
+                y="9"
+              />
+              <circle
+                cx="4"
+                cy="4"
+                r="2"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
