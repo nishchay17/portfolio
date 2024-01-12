@@ -49,7 +49,7 @@ function Nav({ isSticky }: NavProp): ReactElement {
               </Text>
             </a>
             <a
-              href="https://planet-blog.vercel.app/"
+              href="https://blog.nishchay17.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
