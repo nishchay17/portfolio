@@ -4,7 +4,7 @@ export const projects = [
     name: "NPM counter",
     description: "Get count of any npm package quicky!",
     github: "https://github.com/nishchay17/npmcounter",
-    live: "https://npmcounter.netlify.app/",
+    live: "https://npmcounter.vercel.app/",
     tag: "Next, Tailwind, Typescript",
     image: "npm.png",
     bg: "red.50",
