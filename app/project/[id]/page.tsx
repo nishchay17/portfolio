@@ -1,8 +1,6 @@
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import type { Metadata } from "next";
 
-import ProjectLayout from "../../../components/ProjectPage/ProjectLayout";
-import Layout from "../../../components/Layout";
 import { projects } from "../../../config/project";
 import { Project } from "../../../interface/Project";
 
@@ -24,9 +22,7 @@ function Project({ params: { id } }: { params: { id: string } }): ReactElement {
     }
   }
 
-  return (
-    <Layout>{!project ? <></> : <ProjectLayout project={project} />}</Layout>
-  );
+  return <div>{JSON.stringify(project)}</div>;
 }
 
 export default Project;

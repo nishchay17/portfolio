@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
 import { Providers } from "./provider";
 import Analytics from "./Analytics";
@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   icons: ["/svg/logo.svg"],
 };
 
-const inter = Inter({ subsets: ["latin"] });
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function RootLayout({
   children,
@@ -23,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={notoSans.className}>
         <Analytics />
         <Providers>{children}</Providers>
       </body>

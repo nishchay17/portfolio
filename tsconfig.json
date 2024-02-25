@@ -18,7 +18,10 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    }
   },
   "include": [
     "types/next-env.d.ts",
