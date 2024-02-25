@@ -1,7 +1,9 @@
-import { ReactElement } from "react";
+import Hero from "@/components/landing/hero";
 
-function Home(): ReactElement {
-  return <p>hello</p>;
+export default function Home() {
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
-
-export default Home;

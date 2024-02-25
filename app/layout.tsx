@@ -1,9 +1,11 @@
 import "../styles/globals.css";
+
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 
-import { Providers } from "./provider";
 import Analytics from "./Analytics";
+
+const notoSans = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -14,22 +16,15 @@ export const metadata: Metadata = {
   icons: ["/svg/logo.svg"],
 };
 
-const notoSans = Noto_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={notoSans.className}>
-        <Analytics />
-        <Providers>{children}</Providers>
-      </body>
+    <html lang="en">
+      <Analytics />
+      <body className={notoSans.className}>{children}</body>
     </html>
   );
 }
