@@ -6,7 +6,7 @@ function Hero() {
       <h1 className="text-hero font-normal text-center leading-[110%]">
         Hello there <br /> I am Nishchay
       </h1>
-      <p className="opacity-75 text-xl">
+      <p className="opacity-75 text-lg lg:text-xl text-center">
         A full stack developer, designing and developing web
       </p>
       <div className="flex gap-4">

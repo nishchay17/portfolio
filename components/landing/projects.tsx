@@ -41,13 +41,13 @@ function Projects() {
       <div className="relative h-full w-full">
         <div className="-z-10 absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_0%,#000_70%,transparent_110%)]"></div>
         <h3 className="text-hero text-center -mt-14 z-20 relative">Projects</h3>
-        <div className="grid gap-4 grid-cols-2 mt-36 max-w-[1000px] mx-auto">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 mt-36 max-w-[1000px] mx-auto">
           {projects.map((project) => (
             <div
               key={project.id}
               className="border border-white/20 rounded py-5 px-6"
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start justify-between gap-4 flex-col md:flex-row">
                 <p className="text-xl">{project.name}</p>
                 {project.additionalTags?.map((tag) => (
                   <Badge

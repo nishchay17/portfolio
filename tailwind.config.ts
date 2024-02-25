@@ -12,14 +12,14 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
       fontSize: {
-        hero: "clamp(1.5rem, 5vw, 5rem)",
+        hero: "clamp(3rem, 5vw, 5rem)",
       },
       colors: {
         border: "hsl(var(--border))",
