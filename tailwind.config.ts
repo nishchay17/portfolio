@@ -19,7 +19,8 @@ const config = {
     },
     extend: {
       fontSize: {
-        hero: "clamp(3rem, 5vw, 5rem)",
+        hero: "clamp(3.125rem, 2.0631rem + 4.5307vw, 7.5rem)",
+        para: "clamp(1.125rem, 1.0036rem + 0.5178vw, 1.625rem)",
       },
       colors: {
         border: "hsl(var(--border))",

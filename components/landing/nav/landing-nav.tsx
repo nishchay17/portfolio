@@ -28,8 +28,12 @@ function Navbar() {
     <nav className="fixed top-0 right-0 left-0 z-20">
       <motion.div
         variants={variants}
+        initial={{ opacity: 0, y: -50 }}
         animate={hidden ? "hidden" : "visible"}
-        transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+        transition={{
+          ease: [0.1, 0.25, 0.3, 1],
+          duration: 0.6,
+        }}
         className="bg-[#020817_50%] backdrop-blur-sm"
       >
         <div className="flex justify-between items-center container py-4">
@@ -44,7 +48,13 @@ function Navbar() {
             prefetch={false}
           >
             <Button variant="outline" size="sm">
-              Linkedin
+              <span className="w-3 h-3 relative mr-2">
+                <span className="size-full absolute inset-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <span className="size-full block rounded-full bg-green-400 animate-ping" />
+                </span>
+                <span className="size-[70%] rounded-full bg-green-500 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2" />
+              </span>
+              <p>Open to work</p>
             </Button>
           </Link>
         </div>

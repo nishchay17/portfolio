@@ -1,11 +1,11 @@
 import "../styles/globals.css";
 
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Mulish } from "next/font/google";
 
 import Analytics from "./Analytics";
 
-const notoSans = Noto_Sans({ subsets: ["latin"] });
+const mulish = Mulish({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <Analytics />
-      <body className={notoSans.className}>{children}</body>
+      <body className={mulish.className}>{children}</body>
     </html>
   );
 }
