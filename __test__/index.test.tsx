@@ -4,7 +4,7 @@ import mockRouter from "next-router-mock";
 import { MemoryRouterProvider } from "next-router-mock/MemoryRouterProvider";
 
 import Hero from "../components/Landing/HeroSection";
-import Projects from "../components/landing/projectsSection";
+import Projects from "../components/landing/project/projectsSection";
 import Tech from "../components/landing/techSection";
 import { projects } from "../config/project";
 import TECH from "../config/tech";

@@ -5,7 +5,7 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import Hero from "@/components/landing/hero";
 import Navbar from "@/components/landing/nav/landing-nav";
 import StickyNav from "@/components/landing/nav/sticky-nav";
-import Projects from "@/components/landing/projectsSection";
+import Projects from "@/components/landing/project/projectsSection";
 import Tech from "@/components/landing/techSection";
 import Footer from "@/components/landing/footer";
 
