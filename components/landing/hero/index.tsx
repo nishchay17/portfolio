@@ -11,7 +11,7 @@ function Hero() {
   const throttleScale = useThrottle<MotionValue<number>>(scale, 200);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden" id="home">
       <div className="relative w-screen">
         <motion.div
           style={{ translateY: throttleY }}

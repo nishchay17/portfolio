@@ -1,4 +1,11 @@
-const ITEMS = ["Home", "Projects", "Blog", "Resume", "Contact"];
+const ITEMS = [
+  { name: "Home", selector: "#home" },
+  { name: "Projects", selector: "#projects" },
+  { name: "Skills", selector: "#skills" },
+  { name: "Blog", selector: "#blog" },
+  { name: "Resume", selector: "#resume" },
+  { name: "Contact", selector: "#contact" },
+];
 
 function StickyNav() {
   return (
@@ -6,10 +13,15 @@ function StickyNav() {
       <ul className="flex gap-6 justify-center items-center">
         {ITEMS.map((it) => (
           <li
-            key={it}
+            key={it.name}
+            onClick={() =>
+              document
+                ?.querySelector(it.selector)
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="hover:text-slate-300 transition cursor-pointer font-light"
           >
-            {it}
+            {it.name}
           </li>
         ))}
       </ul>

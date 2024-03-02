@@ -47,7 +47,10 @@ function Footer() {
   };
 
   return (
-    <footer className="container px-12 h-[95vh] border-t-[0.5px] border-white/20 flex items-center relative overflow-hidden">
+    <footer
+      id="contact"
+      className="container px-12 h-[95vh] border-t-[0.5px] border-white/20 flex items-center relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle_600px_at_95%_15%,#6533ee75,transparent)]"></div>
       <div className="absolute inset-0 stroke-slate-900 -z-10">
         <motion.svg
@@ -65,7 +68,6 @@ function Footer() {
           />
         </motion.svg>
       </div>
-
       <div className="flex-1">
         <StaggerText
           text="Lets connect."
