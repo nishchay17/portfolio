@@ -3,7 +3,13 @@
 import { useRef } from "react";
 import { motion, Variants } from "framer-motion";
 
-function StaggerText({ text, className }: { text: string; className: string }) {
+function StaggerText({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) {
   const ref = useRef(null);
   const textArray = text.split("");
 

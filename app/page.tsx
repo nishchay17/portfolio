@@ -2,11 +2,12 @@
 
 import { ReactLenis } from "@studio-freight/react-lenis";
 
-import Blog from "@/components/landing/blog";
 import Hero from "@/components/landing/hero";
 import Navbar from "@/components/landing/nav/landing-nav";
 import StickyNav from "@/components/landing/nav/sticky-nav";
 import Projects from "@/components/landing/projectsSection";
+import Tech from "@/components/Landing/Tech";
+import Footer from "@/components/landing/footer";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
       <Hero />
       <StickyNav />
       <Projects />
-      <div className="h-screen w-full" />
+      <Tech />
+      <Footer />
     </ReactLenis>
   );
 }
