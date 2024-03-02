@@ -14,13 +14,15 @@ const config = {
       center: true,
       padding: "1rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "2000px",
       },
     },
     extend: {
       fontSize: {
         hero: "clamp(3.125rem, 2.0631rem + 4.5307vw, 7.5rem)",
         para: "clamp(1.125rem, 1.0036rem + 0.5178vw, 1.625rem)",
+        "para-sm": "clamp(1.125rem, 1.0947rem + 0.1294vw, 1.25rem)",
+        heading: "clamp(2.5rem, 2.0449rem + 1.9417vw, 4.375rem)",
       },
       colors: {
         border: "hsl(var(--border))",
