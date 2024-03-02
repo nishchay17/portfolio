@@ -8,8 +8,9 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 import { projects } from "@/config/project";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
+import { Button } from "@/ui/button";
+import { Badge } from "@/ui/badge";
+import StaggerText from "@/ui/staggerText";
 
 const bagdeClass = {
   "No longer supported": "bg-red-200",
@@ -56,7 +57,10 @@ export default function Projects() {
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_320px_at_90%_65%,#3e3e3e76,transparent)]"></div>
           <motion.div style={{ x }} className="flex gap-16">
             <div className="pr-32 flex flex-col">
-              <h2 className="text-7xl font-medium mb-8">Projects</h2>
+              <StaggerText
+                className="text-7xl font-medium mb-8"
+                text="Projects"
+              />
               <p className="text-xl opacity-80">
                 A showcase of all my work, <br />
                 mainly created in Next js, and javacript
