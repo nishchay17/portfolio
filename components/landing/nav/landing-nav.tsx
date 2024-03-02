@@ -36,7 +36,7 @@ function Navbar() {
         }}
         className="bg-[#020817_50%] backdrop-blur-sm"
       >
-        <div className="flex justify-between items-center container py-4">
+        <div className="flex justify-between items-center container max-w-[1400px] py-4">
           <div className="flex gap-3 items-center">
             <Image src="/svg/logo.svg" alt="logo" width={14} height={14} />
             <h2 className="tracking-wider text-sm">Nishchay</h2>
