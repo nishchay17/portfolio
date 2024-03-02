@@ -59,11 +59,11 @@ export default function Projects() {
           <motion.div style={{ x }} className="flex gap-16">
             <div className="pr-32 flex flex-col">
               <StaggerText
-                className="text-7xl font-medium mb-8"
+                className="text-heading font-medium mb-8"
                 text="Projects"
               />
               <RevealBox>
-                <p className="text-xl opacity-80">
+                <p className="text-para-sm opacity-80">
                   A showcase of all my work, <br />
                   mainly created in Next js, and javacript
                 </p>
