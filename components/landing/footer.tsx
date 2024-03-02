@@ -13,17 +13,18 @@ function Footer() {
     },
     {
       name: "Projects",
-      describe: "Here's a curated section of my projects.",
+      describe:
+        "Here's a curated section of my projects. Check it out the source code in github also!",
       href: "/",
     },
     {
       name: "Skills",
-      describe: "Check out my skills and experience.",
+      describe: "Check out my skills and tech stack that I love to use.",
       href: "/",
     },
     {
       name: "Resume",
-      describe: "See my work experience and projects.",
+      describe: "See my work experience and projects curated in one place.",
       href: "/",
     },
   ];
@@ -79,7 +80,7 @@ function Footer() {
           <a key={it.name} href={it.href}>
             <div>
               <h3 className="text-para mb-2">{it.name}</h3>
-              <p className="text-lg opacity-60">{it.describe}</p>
+              <p className="text-lg text-gray-400">{it.describe}</p>
             </div>
           </a>
         ))}
