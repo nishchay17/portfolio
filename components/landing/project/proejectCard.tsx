@@ -20,12 +20,12 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           " py-5 px-6 border-[0.5px] border-white/20 bg-transparent cursor-pointer relative"
         }
       >
-        <div className="flex items-center justify-between gap-4 mt-4 flex-col md:flex-row">
-          <p className="text-3xl">{project.name}</p>
-          <div className="flex items-center gap-4">
+        <div className="flex md:items-center justify-between gap-2 md:gap-8 my-2 md:my-4 flex-col md:flex-row">
+          <p className="text-subheading leading-[105%]">{project.name}</p>
+          <div className="flex items-center gap-2 lg:gap-4">
             <Link href={project.github} target="_blank" rel="noreferrer">
               <Button
-                className="px-0 group uppercase tracking-wider text-base transition-all"
+                className="px-0 group uppercase tracking-wider text-para-xm transition-all"
                 variant="link"
                 size="sm"
               >
@@ -35,7 +35,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             </Link>
             <Link href={project.live} target="_blank" rel="noreferrer">
               <Button
-                className="px-0 group uppercase tracking-wider text-base transition-all"
+                className="px-0 group uppercase tracking-wider text-para-xm transition-all"
                 variant="link"
                 size="sm"
               >
@@ -56,15 +56,16 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             {tag}
           </Badge>
         ))}
-        <p className="text-lg mt-4 text-primary/80 line-clamp-3">
+        <p className="text-para-sm mt-4 text-primary/80 line-clamp-3">
           {project.description}
         </p>
         <div className="absolute inset-0 size-full bg-zinc-950/10 backdrop-blur-xl -z-20" />
       </div>
       <Image
-        className="absolute -z-10 bottom-0 group right-1/2 translate-x-1/2 w-[90%] max-w-[700px] rounded-t-xl"
+        className="absolute -z-10 bottom-0 group right-1/2 translate-x-1/2 w-[90%] max-w-[700px] max-h-[50%] rounded-t-xl object-cover object-top"
         src={`/img/${project.image}`}
         alt={project.name}
+        quality={100}
         width={700}
         height={700}
       />

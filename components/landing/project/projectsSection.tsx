@@ -30,7 +30,10 @@ export default function Projects() {
           {Array(40)
             .fill("Show case")
             .map((it, idx) => (
-              <span className="text-xl opacity-40 mr-4 uppercase" key={idx}>
+              <span
+                className="text-para-sm opacity-40 mr-4 uppercase"
+                key={idx}
+              >
                 {it}{" "}
               </span>
             ))}
@@ -41,8 +44,8 @@ export default function Projects() {
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_300px_at_5%_30%,#3e3e3e,transparent)]"></div>
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:16px_16px]"></div>
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_320px_at_90%_65%,#3e3e3e76,transparent)]"></div>
-          <motion.div style={{ x }} className="flex gap-16">
-            <div className="pr-32 flex flex-col">
+          <motion.div style={{ x }} className="flex gap-[2vw]">
+            <div className="pr-12 md:pr-32 flex flex-col">
               <StaggerText
                 className="text-heading font-medium mb-8"
                 text="Projects"
@@ -70,7 +73,9 @@ export default function Projects() {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className={"w-[40vw] h-[70vh] max-w-[700px]"}
+                className={
+                  "w-[calc(calc(100vw-2vw)/2.3)] max-w-[800] h-[70vh] max-h-[700]"
+                }
               >
                 <ProjectCard project={project} key={project.id} />
               </div>

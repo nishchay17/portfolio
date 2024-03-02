@@ -49,7 +49,7 @@ function Footer() {
   return (
     <footer
       id="contact"
-      className="container px-12 h-[95vh] border-t-[0.5px] border-white/20 flex items-center relative overflow-hidden"
+      className="container px-12 py-10 min-h-[95vh] border-t-[0.5px] border-white/20 flex items-start md:items-center relative overflow-hidden flex-col md:flex-row gap-6"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_600px_at_95%_15%,#6533ee75,transparent)]"></div>
       <div className="absolute inset-0 stroke-slate-900 -z-10">
@@ -71,18 +71,18 @@ function Footer() {
       <div className="flex-1">
         <StaggerText
           text="Lets connect."
-          className="text-heading font-medium w-[20vw] leading-[80%] mb-16"
+          className="text-heading font-medium w-[20vw] leading-[80%] mb-7 md:mb-16"
         />
         <p className="text-para-sm opacity-60 cursor-pointer">
           nishchay13971@gmail.com
         </p>
       </div>
-      <div className="flex-[2_2_0%] grid grid-cols-3 gap-16">
+      <div className="flex-[2_2_0%] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-12 xl:gap-16">
         {sections.map((it) => (
           <a key={it.name} href={it.href}>
             <div>
               <h3 className="text-para mb-2">{it.name}</h3>
-              <p className="text-lg text-gray-400">{it.describe}</p>
+              <p className="text-para-sm text-gray-400">{it.describe}</p>
             </div>
           </a>
         ))}
