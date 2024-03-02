@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/ui/button";
 import { Badge } from "@/ui/badge";
 import StaggerText from "@/ui/staggerText";
+import RevealBox from "@/ui/revealBox";
 
 const bagdeClass = {
   "No longer supported": "bg-red-200",
@@ -61,10 +62,12 @@ export default function Projects() {
                 className="text-7xl font-medium mb-8"
                 text="Projects"
               />
-              <p className="text-xl opacity-80">
-                A showcase of all my work, <br />
-                mainly created in Next js, and javacript
-              </p>
+              <RevealBox>
+                <p className="text-xl opacity-80">
+                  A showcase of all my work, <br />
+                  mainly created in Next js, and javacript
+                </p>
+              </RevealBox>
               <Link
                 className="mt-auto w-fit"
                 href={"https://www.linkedin.com/in/nishchay-trivedi-61219978"}
