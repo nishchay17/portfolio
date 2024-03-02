@@ -74,7 +74,10 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="lg" className="uppercase font-extrabold">
+                <Button
+                  size="lg"
+                  className="uppercase font-extrabold bg-yellow-300 hover:bg-yellow-400"
+                >
                   Contact me
                 </Button>
               </Link>
