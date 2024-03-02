@@ -20,7 +20,7 @@ export default function Projects() {
   const x = useTransform(
     horizontalScroll.scrollYProgress,
     [0, 1],
-    ["1%", "-70%"]
+    ["1%", `-65%`]
   );
 
   return (
@@ -71,12 +71,7 @@ export default function Projects() {
               </Link>
             </div>
             {projects.map((project) => (
-              <div
-                key={project.id}
-                className={
-                  "w-[calc(calc(100vw-2vw)/2.3)] max-w-[800] h-[70vh] max-h-[700]"
-                }
-              >
+              <div key={project.id} className={"h-[70vh] w-[38vw]"}>
                 <ProjectCard project={project} key={project.id} />
               </div>
             ))}
