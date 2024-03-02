@@ -94,19 +94,19 @@ export default function Projects() {
                 >
                   <div className="flex items-center justify-between gap-4 mt-4 flex-col md:flex-row">
                     <p className="text-3xl">{project.name}</p>
-                    <div className="flex items-center">
+                    <div className="flex items-center gap-4">
                       <Link
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
                       >
                         <Button
-                          className="group uppercase tracking-wider text-lg transition-all duration-700"
+                          className="px-0 group uppercase tracking-wider text-base transition-all"
                           variant="link"
                           size="sm"
                         >
-                          <span className="group-hover:italic">github</span>
-                          <ArrowTopRightIcon className="ml-1 size-6 group-hover:size-7" />
+                          <span>github</span>
+                          <ArrowTopRightIcon className="ml-1 size-6 opacity-0 group-hover:opacity-100 transition-all" />
                         </Button>
                       </Link>
                       <Link
@@ -115,12 +115,12 @@ export default function Projects() {
                         rel="noreferrer"
                       >
                         <Button
-                          className="group uppercase tracking-wider text-lg transition-all"
+                          className="px-0 group uppercase tracking-wider text-base transition-all"
                           variant="link"
                           size="sm"
                         >
-                          <span className="group-hover:italic">Visit</span>
-                          <ArrowTopRightIcon className="ml-1 w-6 h-6 group-hover:w-7 group-hover:h-7" />
+                          <span>Visit</span>
+                          <ArrowTopRightIcon className="ml-1 w-6 h-6 opacity-0 group-hover:opacity-100 transition-all" />
                         </Button>
                       </Link>
                     </div>
