@@ -20,7 +20,7 @@ export default function Projects() {
   const x = useTransform(
     horizontalScroll.scrollYProgress,
     [0, 1],
-    ["1%", "-70%"]
+    ["1%", `-65%`]
   );
 
   return (
@@ -44,7 +44,7 @@ export default function Projects() {
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_300px_at_5%_30%,#3e3e3e,transparent)]"></div>
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:16px_16px]"></div>
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_320px_at_90%_65%,#3e3e3e76,transparent)]"></div>
-          <motion.div style={{ x }} className="flex gap-[2vw]">
+          <motion.div style={{ x }} className="flex gap-[3vw]">
             <div className="pr-12 md:pr-32 flex flex-col">
               <StaggerText
                 className="text-heading font-medium mb-8"
@@ -71,12 +71,7 @@ export default function Projects() {
               </Link>
             </div>
             {projects.map((project) => (
-              <div
-                key={project.id}
-                className={
-                  "w-[calc(calc(100vw-2vw)/2.3)] max-w-[800] h-[70vh] max-h-[700]"
-                }
-              >
+              <div key={project.id} className={"h-[70vh] w-[38vw]"}>
                 <ProjectCard project={project} key={project.id} />
               </div>
             ))}

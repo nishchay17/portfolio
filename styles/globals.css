@@ -73,6 +73,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  .project-card::before {
+    @apply bg-zinc-950/30;
+  }
 }
 
 html.lenis {
@@ -93,4 +96,8 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+.transform-bottom-center::before {
+  transform-origin: bottom center;
 }
