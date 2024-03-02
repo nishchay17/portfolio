@@ -7,9 +7,11 @@ function Analytics() {
     <>
       <Script
         strategy="afterInteractive"
+        defer
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
       <Script
+        defer
         id="gtag-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
