@@ -83,7 +83,7 @@ export default function Projects() {
               <div
                 key={project.id}
                 className={
-                  "w-[40vw] h-[70vh] flex items-end justify-center relative"
+                  "w-[40vw] h-[70vh] max-w-[700px] flex items-end justify-center relative"
                 }
               >
                 <div
@@ -145,11 +145,11 @@ export default function Projects() {
                   <div className="absolute inset-0 size-full bg-zinc-950/10 backdrop-blur-xl -z-20" />
                 </div>
                 <Image
-                  className="absolute -z-10 bottom-0 group right-1/2 translate-x-1/2 w-[80%] rounded-t-xl"
+                  className="absolute -z-10 bottom-0 group right-1/2 translate-x-1/2 w-[90%] max-w-[700px] rounded-t-xl"
                   src={`/img/${project.image}`}
                   alt={project.name}
-                  width={800}
-                  height={800}
+                  width={700}
+                  height={700}
                 />
               </div>
             ))}
