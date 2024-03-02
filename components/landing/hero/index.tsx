@@ -8,6 +8,7 @@ function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
   const translateY = useTransform(scrollYProgress, [0, 1], [0, 7750]);
   const throttleY = useThrottle<MotionValue<number>>(translateY, 200);
+  const throttleScale = useThrottle<MotionValue<number>>(scale, 200);
 
   return (
     <div className="overflow-hidden">
@@ -17,7 +18,7 @@ function Hero() {
           className="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(135%_125%_at_50%_10%,#020817_40%,#63e_100%)] will-change-transform"
         />
         <motion.div
-          style={{ scale, translateY: throttleY }}
+          style={{ scale: throttleScale, translateY: throttleY }}
           className="will-change-transform"
         >
           <div className="h-screen w-full flex justify-center items-center flex-col gap-8">
