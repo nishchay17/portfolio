@@ -65,7 +65,7 @@ export default function Projects() {
               <RevealBox>
                 <p className="text-para-sm opacity-80">
                   A showcase of all my work, <br />
-                  mainly created in Next js, and javacript
+                  mainly created in Next js, and javascript
                 </p>
               </RevealBox>
               <Link
