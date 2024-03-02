@@ -1,6 +1,6 @@
 "use client";
 
-import { useThrottle } from "@/hoooks/useThrottle";
+import { useThrottle } from "@/hooks/useThrottle";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 
 function Hero() {
