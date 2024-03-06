@@ -18,7 +18,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         "project-card size-full transition-all ease-in-out duration-500 rounded-xl py-5 px-6 pb-0 " +
         " cursor-pointer relative flex flex-col justify-between items-center gap-4" +
         " before:size-full before:absolute before:inset-0 before:rounded-xl before:z-[-1]" +
-        " before:border-white/20 before:border-[0.5px] hover:before:scale-[1.02] before:transition-all transform-bottom-center"
+        " before:border-white/20 before:bg-black/40 before:border-[0.5px] hover:before:scale-[1.02] before:transition-all transform-bottom-center"
       }
     >
       <div className="w-full">
