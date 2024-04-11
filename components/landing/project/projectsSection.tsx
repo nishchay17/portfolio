@@ -72,19 +72,18 @@ export default function Projects() {
                     mainly created in Next js, and javascript
                   </p>
                 </RevealBox>
-                <Link
-                  className="mt-auto w-fit"
-                  href={"https://www.linkedin.com/in/nishchay-trivedi-61219978"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    className="uppercase font-extrabold bg-yellow-300 hover:bg-yellow-400"
+                <Button size="lg" variant="cfa" asChild>
+                  <Link
+                    className="mt-auto w-fit"
+                    href={
+                      "https://www.linkedin.com/in/nishchay-trivedi-61219978"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Contact me
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
               {projects.map((project) => (
                 <div key={project.id} className={"h-[70vh] w-[38vw]"}>
