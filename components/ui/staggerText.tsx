@@ -43,6 +43,7 @@ function StaggerText({
       variants={container}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
     >
       {textArray.map((letter, index) => (
         <motion.span key={index} variants={child}>
