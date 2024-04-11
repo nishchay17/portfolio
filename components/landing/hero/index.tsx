@@ -5,6 +5,7 @@ import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { useNav } from "@/context/nav-context";
 import { useIntersectionObserver } from "@/hooks/use-intersector";
 import { useThrottle } from "@/hooks/useThrottle";
+import { Particles } from "@/components/particles";
 
 function Hero() {
   const { scrollYProgress } = useScroll();
@@ -34,6 +35,7 @@ function Hero() {
           className="will-change-transform"
         >
           <div className="h-screen w-full flex justify-center items-center flex-col gap-8">
+            <Particles className="absolute inset-0 -z-10" quantity={50} />
             <h1 className="text-hero font-semibold text-center leading-[105%]">
               Hello there <br /> I am{" "}
               <span className="bg-gradient-to-b from-white to-slate-300 text-transparent bg-clip-text">
