@@ -1,7 +1,10 @@
 "use client";
 
-import { useThrottle } from "@/hooks/useThrottle";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+
+import { useNav } from "@/context/nav-context";
+import { useIntersectionObserver } from "@/hooks/use-intersector";
+import { useThrottle } from "@/hooks/useThrottle";
 
 function Hero() {
   const { scrollYProgress } = useScroll();
@@ -10,8 +13,17 @@ function Hero() {
   const throttleY = useThrottle<MotionValue<number>>(translateY, 200);
   const throttleScale = useThrottle<MotionValue<number>>(scale, 200);
 
+  const { isIntersecting, ref } = useIntersectionObserver({
+    threshold: 0.5,
+    initialIsIntersecting: true,
+  });
+  const { handleCurrentNav } = useNav();
+  if (isIntersecting) {
+    handleCurrentNav("Home");
+  }
+
   return (
-    <div className="overflow-hidden" id="home">
+    <div className="overflow-hidden" id="home" ref={ref}>
       <div className="relative w-screen">
         <motion.div
           style={{ translateY: throttleY }}

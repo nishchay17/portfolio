@@ -3,6 +3,8 @@
 import { Variants, motion } from "framer-motion";
 
 import StaggerText from "../ui/staggerText";
+import { useNav } from "@/context/nav-context";
+import { useIntersectionObserver } from "@/hooks/use-intersector";
 
 function Footer() {
   const sections = [
@@ -46,6 +48,14 @@ function Footer() {
     },
   };
 
+  const { isIntersecting, ref } = useIntersectionObserver({
+    threshold: 0.5,
+  });
+  const { handleCurrentNav } = useNav();
+  if (isIntersecting) {
+    handleCurrentNav("Contact");
+  }
+
   return (
     <footer
       id="contact"
@@ -87,6 +97,7 @@ function Footer() {
           </a>
         ))}
       </div>
+      <div ref={ref} />
     </footer>
   );
 }

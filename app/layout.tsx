@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 
 import Analytics from "./Analytics";
+import Providers from "./Providers";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -24,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <Analytics />
-      <body className={mulish.className}>{children}</body>
+      <body className={mulish.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
