@@ -29,7 +29,6 @@ export default function Projects() {
     threshold: 0.1,
   });
   const { handleCurrentNav } = useNav();
-  console.log("project", isIntersecting);
   if (isIntersecting) {
     handleCurrentNav("Projects");
   }
