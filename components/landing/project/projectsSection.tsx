@@ -41,6 +41,7 @@ export default function Projects() {
             .fill("Show case")
             .map((it, idx) => (
               <span
+                aria-disabled="true"
                 className="text-para-sm opacity-40 mr-4 uppercase"
                 key={idx}
               >

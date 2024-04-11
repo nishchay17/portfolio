@@ -97,6 +97,7 @@ function Footer() {
           <Link
             className="border border-indigo-800 hover:bg-indigo-700 transition-colors p-3 rounded-full"
             href="https://github.com/nishchay17"
+            aria-label="Github"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -105,6 +106,7 @@ function Footer() {
           <Link
             className="border border-indigo-800 hover:bg-indigo-700 transition-colors p-3 rounded-full"
             href="https://www.linkedin.com/in/nishchay-trivedi-61219978"
+            aria-label="Linkedin"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -113,6 +115,7 @@ function Footer() {
           <Link
             className="border border-indigo-800 hover:bg-indigo-700 transition-colors p-3 rounded-full"
             href="https://twitter.com/Nishchay17_"
+            aria-label="Twitter"
             target="_blank"
             rel="noopener noreferrer"
           >

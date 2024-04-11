@@ -26,9 +26,9 @@ function Tech() {
               className="border px-8 py-6 rounded-lg hover:border-white/20 hover:shadow-inner transition-all"
               key={it.id}
             >
-              <h3 className="underline underline-offset-2 opacity-80 mb-2 select-none">
+              <p className="underline underline-offset-2 opacity-80 mb-2 select-none">
                 {it.name}
-              </h3>
+              </p>
               <p className="text-para">{it.techs.map((it) => it).join(", ")}</p>
             </div>
           ))}
