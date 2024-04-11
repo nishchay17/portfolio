@@ -66,9 +66,9 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           {project.description}
         </p>
       </div>
-      <div className="overflow-hidden w-[90%]">
+      <div className="overflow-hidden w-[90%] mb-[1px]">
         <Image
-          className="rounded-t-xl object-contain object-top"
+          className="rounded-t-xl object-contain object-top border border-white/20 border-b-0"
           src={`/img/${project.image}`}
           alt={project.name}
           quality={100}
