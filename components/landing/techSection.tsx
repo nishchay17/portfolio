@@ -5,7 +5,7 @@ import StaggerText from "@/ui/staggerText";
 
 function Tech() {
   const { isIntersecting, ref } = useIntersectionObserver({
-    threshold: 0.9,
+    threshold: 0.5,
     freezeOnceVisible: false,
   });
   const { handleCurrentNav } = useNav();
