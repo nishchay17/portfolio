@@ -1,6 +1,7 @@
 "use client";
 
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 import { useNav } from "@/context/nav-context";
 import { useIntersectionObserver } from "@/hooks/use-intersector";
@@ -27,15 +28,17 @@ function Hero() {
     <div className="overflow-hidden" id="home" ref={ref}>
       <div className="relative w-screen">
         <motion.div
-          style={{ translateY: throttleY }}
+          style={isMobile ? {} : { translateY: throttleY }}
           className="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(135%_125%_at_50%_10%,#020817_40%,#63e_100%)] will-change-transform"
         />
+        <Particles className="absolute inset-0 -z-10" quantity={70} />
         <motion.div
-          style={{ scale: throttleScale, translateY: throttleY }}
+          style={
+            isMobile ? {} : { scale: throttleScale, translateY: throttleY }
+          }
           className="will-change-transform"
         >
           <div className="h-screen w-full flex justify-center items-center flex-col gap-8">
-            <Particles className="absolute inset-0 -z-10" quantity={50} />
             <h1 className="text-hero font-semibold text-center leading-[105%]">
               Hello there <br /> I am{" "}
               <span className="bg-gradient-to-b from-white to-slate-300 text-transparent bg-clip-text">

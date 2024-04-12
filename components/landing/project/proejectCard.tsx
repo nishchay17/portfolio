@@ -18,7 +18,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         "project-card size-full transition-all ease-in-out duration-500 rounded-xl py-5 px-6 pb-0 " +
         " cursor-pointer relative flex flex-col justify-between items-center gap-4" +
         " before:size-full before:absolute before:inset-0 before:rounded-xl before:z-[-1]" +
-        " before:border-white/20 before:bg-black/40 before:border-[0.5px] hover:before:scale-[1.02] before:transition-all transform-bottom-center"
+        " before:border-white/20 before:bg-black/40 before:border-[0.5px] md:hover:before:scale-[1.02] before:transition-all transform-bottom-center"
       }
     >
       <div className="w-full">
@@ -32,7 +32,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 size="sm"
               >
                 <span>github</span>
-                <ArrowTopRightIcon className="ml-1 size-6 opacity-0 group-hover:opacity-100 transition-all" />
+                <ArrowTopRightIcon className="ml-1 size-6 md:opacity-0 group-hover:opacity-100 transition-all" />
               </Button>
             </Link>
             <Link href={project.live} target="_blank" rel="noreferrer">
@@ -42,7 +42,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 size="sm"
               >
                 <span>Visit</span>
-                <ArrowTopRightIcon className="ml-1 w-6 h-6 opacity-0 group-hover:opacity-100 transition-all" />
+                <ArrowTopRightIcon className="ml-1 w-6 h-6 md:opacity-0 group-hover:opacity-100 transition-all" />
               </Button>
             </Link>
           </div>

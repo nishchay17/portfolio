@@ -61,7 +61,7 @@ function Footer() {
   return (
     <footer
       id="contact"
-      className="container px-12 py-10 min-h-[95vh] border-t-[0.5px] border-white/20 flex items-start md:items-center relative overflow-hidden flex-col md:flex-row gap-6"
+      className="container px-6 md:px-12 py-10 min-h-[95vh] border-t-[0.5px] border-white/20 flex items-start md:items-center relative overflow-hidden flex-col md:flex-row gap-6 mb-5 md:mb-0"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_600px_at_95%_15%,#6533ee75,transparent)] -z-10"></div>
       <div className="absolute inset-0 stroke-slate-900 -z-10">

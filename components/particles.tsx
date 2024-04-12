@@ -52,11 +52,6 @@ export const Particles: React.FC<ParticlesProps> = ({
     }
     initCanvas();
     animate();
-    window.addEventListener("resize", initCanvas);
-
-    return () => {
-      window.removeEventListener("resize", initCanvas);
-    };
   }, []);
 
   useEffect(() => {
