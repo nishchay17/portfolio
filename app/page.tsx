@@ -8,16 +8,20 @@ import StickyNav from "@/components/landing/nav/sticky-nav";
 import Projects from "@/components/landing/project/projectsSection";
 import Tech from "@/components/landing/techSection";
 import Footer from "@/components/landing/footer";
+import CustomCursor from "@/components/custom-cursor";
 
 export default function Home() {
   return (
-    <ReactLenis root options={{ lerp: 0, duration: 1, smoothWheel: true }}>
-      <Navbar />
-      <Hero />
-      <StickyNav />
-      <Projects />
-      <Tech />
-      <Footer />
-    </ReactLenis>
+    <>
+      <ReactLenis root options={{ lerp: 0, duration: 1, smoothWheel: true }}>
+        <Navbar />
+        <Hero />
+        <StickyNav />
+        <Projects />
+        <Tech />
+        <Footer />
+      </ReactLenis>
+      <CustomCursor />
+    </>
   );
 }
