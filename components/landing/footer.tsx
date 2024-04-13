@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  MotionValue,
-  Variants,
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { isMobile } from "react-device-detect";
@@ -46,23 +40,6 @@ function Footer() {
       href: "",
     },
   ];
-
-  const path: Variants = {
-    hidden: {
-      pathLength: 0,
-      strokeWidth: "2px",
-    },
-    visible: {
-      pathLength: 1,
-      transition: {
-        duration: 3,
-        ease: "easeInOut",
-        repeat: Infinity,
-        repeatType: "reverse",
-        repeatDelay: 4,
-      },
-    },
-  };
 
   const { isIntersecting, ref } = useIntersectionObserver({
     threshold: 0.5,
