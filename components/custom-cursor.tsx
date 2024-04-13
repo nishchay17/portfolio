@@ -11,8 +11,8 @@ export default function CustomCursor() {
       animate(
         scope.current,
         {
-          x: event.clientX - 8,
-          y: event.clientY - 8,
+          x: event.clientX - 6,
+          y: event.clientY - 6,
         },
         {
           type: "tween",
@@ -34,7 +34,7 @@ export default function CustomCursor() {
       ref={scope}
       className={
         "fixed z-50 top-0 left-0 rounded-full pointer-events-none select-none" +
-        " mix-blend-difference size-4 bg-yellow-300 hidden md:block print:hidden"
+        " mix-blend-difference size-3 bg-yellow-400 hidden md:block print:hidden"
       }
     />
   );
