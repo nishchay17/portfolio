@@ -2,11 +2,16 @@
 
 import { Variants, motion } from "framer-motion";
 import Link from "next/link";
-import { Github, LinkedinIcon, TwitterIcon } from "lucide-react";
+import Image from "next/image";
 
 import StaggerText from "../ui/staggerText";
 import { useNav } from "@/context/nav-context";
 import { useIntersectionObserver } from "@/hooks/use-intersector";
+
+import github from "@/public/svg/github.svg";
+import instagram from "@/public/svg/instagram.svg";
+import linkedin from "@/public/svg/linkedin.svg";
+import twitter from "@/public/svg/twitter.svg";
 
 function Footer() {
   const sections = [
@@ -101,7 +106,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Github size={18} />
+            <Image src={github} alt="Github" />
           </Link>
           <Link
             className="border border-indigo-800 hover:bg-indigo-700 transition-colors p-3 rounded-full"
@@ -110,7 +115,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <LinkedinIcon size={18} />
+            <Image src={linkedin} alt="Linkedin" />
           </Link>
           <Link
             className="border border-indigo-800 hover:bg-indigo-700 transition-colors p-3 rounded-full"
@@ -119,7 +124,16 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <TwitterIcon size={18} />
+            <Image src={twitter} alt="Twitter" />
+          </Link>
+          <Link
+            className="border border-indigo-800 hover:bg-indigo-700 transition-colors p-3 rounded-full"
+            href="https://www.instagram.com/nishchay17"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={instagram} alt="Instagram" />
           </Link>
         </div>
       </div>
