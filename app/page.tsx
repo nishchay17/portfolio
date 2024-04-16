@@ -13,7 +13,15 @@ import CustomCursor from "@/components/custom-cursor";
 export default function Home() {
   return (
     <>
-      <ReactLenis root options={{ lerp: 0, duration: 1, smoothWheel: true }}>
+      <ReactLenis
+        root
+        options={{
+          lerp: 0,
+          duration: 1,
+          smoothWheel: true,
+          wheelMultiplier: 1.3,
+        }}
+      >
         <Navbar />
         <Hero />
         <StickyNav />
