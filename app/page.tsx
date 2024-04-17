@@ -9,6 +9,7 @@ import Projects from "@/components/landing/project/projectsSection";
 import Tech from "@/components/landing/techSection";
 import Footer from "@/components/landing/footer";
 import CustomCursor from "@/components/custom-cursor";
+import ResumeSection from "@/components/landing/resume/resume-section";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <StickyNav />
         <Projects />
         <Tech />
+        <ResumeSection />
         <Footer />
       </ReactLenis>
       <CustomCursor />
