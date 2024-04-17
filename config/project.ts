@@ -55,7 +55,6 @@ export const projects = [
     tag: "React",
     image: "url.png",
     createdOn: "2019",
-    additionalTags: ["No longer supported"],
   },
   {
     id: 4,
