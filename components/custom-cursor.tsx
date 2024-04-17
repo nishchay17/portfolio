@@ -1,25 +1,16 @@
 "use client";
 
 import { useAnimate, motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function CustomCursor() {
-  const [scope, animate] = useAnimate();
-
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
     function handlePointer(event: any) {
-      animate(
-        scope.current,
-        {
-          x: event.clientX - 6,
-          y: event.clientY - 6,
-        },
-        {
-          type: "tween",
-          duration: 0.1,
-          delay: 0,
-        }
-      );
+      setMousePosition({
+        x: event.clientX - 6,
+        y: event.clientY - 6,
+      });
     }
 
     window.addEventListener("pointermove", handlePointer);
@@ -31,7 +22,10 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      ref={scope}
+      animate={{
+        ...mousePosition,
+      }}
+      transition={{ type: "tween", duration: 0.1, ease: "linear" }}
       className={
         "fixed z-50 top-0 left-0 rounded-full pointer-events-none select-none" +
         " mix-blend-difference size-3 bg-yellow-400 hidden md:block print:hidden"
