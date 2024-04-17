@@ -10,7 +10,7 @@ import { Particles } from "@/components/particles";
 
 function Hero() {
   const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, -0.5]);
   const translateY = useTransform(scrollYProgress, [0, 1], [0, 7750]);
   const throttleY = useThrottle<MotionValue<number>>(translateY, 200);
   const throttleScale = useThrottle<MotionValue<number>>(scale, 200);

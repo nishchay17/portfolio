@@ -15,7 +15,12 @@ function RevealBox({ children }: { children: React.ReactNode }) {
     },
   };
   return (
-    <motion.div variants={container} initial="hidden" whileInView="visible">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       {children}
     </motion.div>
   );
