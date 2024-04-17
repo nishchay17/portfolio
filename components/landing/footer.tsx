@@ -37,7 +37,7 @@ function Footer() {
     {
       name: "Resume",
       describe: "See my work experience and projects curated in one place.",
-      href: "",
+      href: "#resume",
     },
   ];
 
