@@ -24,6 +24,20 @@ function Hero() {
     handleCurrentNav("Home");
   }
 
+  const heroContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+  const heroItem = {
+    hidden: { opacity: 0, translateY: -50 },
+    show: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="overflow-hidden" id="home" ref={ref}>
       <div className="relative w-screen">
@@ -38,17 +52,28 @@ function Hero() {
           }
           className="will-change-transform"
         >
-          <div className="h-screen w-full flex justify-center items-center flex-col gap-8">
-            <h1 className="text-hero font-semibold text-center leading-[105%]">
+          <motion.div
+            variants={heroContainer}
+            initial="hidden"
+            animate="show"
+            className="h-screen w-full flex justify-center items-center flex-col gap-8"
+          >
+            <motion.h1
+              variants={heroItem}
+              className="text-hero font-semibold text-center leading-[105%]"
+            >
               Hello there <br /> I am{" "}
               <span className="bg-gradient-to-b from-white to-slate-300 text-transparent bg-clip-text">
                 Nishchay
               </span>
-            </h1>
-            <p className="opacity-75 text-para text-center">
+            </motion.h1>
+            <motion.p
+              variants={heroItem}
+              className="opacity-75 text-para text-center"
+            >
               A full stack developer, designing and developing web.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </motion.div>
       </div>
     </div>
