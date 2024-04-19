@@ -1,5 +1,17 @@
 export const projects = [
   {
+    id: 7,
+    name: "Tail track",
+    description:
+      "Track you custom events easy and quickly. Also get notifications on slack via webhook.",
+    github: "https://github.com/nishchay17/tail-track",
+    live: "https://tail-track.vercel.app?ref=portfolio",
+    tag: "Next, Tailwind, Typescript, Next auth, Redis, postgresql, Shadcn",
+    image: "tail-track.png",
+    createdOn: "2024",
+    additionalTags: ["New"],
+  },
+  {
     id: 6,
     name: "NPM counter",
     description: "Get count of any npm package quicky!",
@@ -7,7 +19,6 @@ export const projects = [
     live: "https://npmcounter.vercel.app/",
     tag: "Next, Tailwind, Typescript",
     image: "npm.png",
-    bg: "red.50",
     createdOn: "2024",
     additionalTags: ["New"],
   },
@@ -20,7 +31,6 @@ export const projects = [
     live: "https://planet-blog.vercel.app/",
     tag: "Next, Tailwind, Typescript, Next auth, Contentlayer, MDX",
     image: "blog.png",
-    bg: "green.50",
     createdOn: "2023",
     additionalTags: ["New"],
   },
@@ -33,22 +43,18 @@ export const projects = [
     live: "https://teams-frontend.vercel.app/",
     tag: "Next, Tailwind, Node, MongoDB, Express",
     image: "team-collab.png",
-    bg: "yellow.50",
     createdOn: "2023",
-    additionalTags: ["New"],
   },
   {
     id: 3,
     name: "Url Shortener",
     description:
-      "Used shrtco.de's API to shorten the given URL and persisted in the local storage.",
+      "Mock website for a url shortener service. Used shrtco.de's API to shorten the given URL and persisted in the local storage.",
     github: "https://github.com/nishchay17/Shortly",
     live: "https://shortlytif.netlify.app/",
     tag: "React",
     image: "url.png",
-    bg: "green.50",
     createdOn: "2019",
-    additionalTags: ["No longer supported"],
   },
   {
     id: 4,
@@ -59,20 +65,18 @@ export const projects = [
     live: "https://www.npmjs.com/package/@nishchay17/cdf",
     tag: "Node, CLI",
     image: "cdn.png",
-    bg: "purple.50",
     createdOn: "2020",
   },
-  {
-    id: 2,
-    name: "E-commerce",
-    description:
-      "E-commerce website for selling t-shirt complete with payment options, with a simple UI.",
-    github: "https://github.com/nishchay17/TeeStoreFrontend",
-    live: "https://theteestore.netlify.app/",
-    tag: "React, Node, MongoDB, Express",
-    image: "tee.png",
-    bg: "red.50",
-    createdOn: "2019",
-    additionalTags: ["No longer supported"],
-  },
-] as const;
+  // {
+  //   id: 2,
+  //   name: "E-commerce",
+  //   description:
+  //     "E-commerce website for selling t-shirt complete with payment options, with a simple UI.",
+  //   github: "https://github.com/nishchay17/TeeStoreFrontend",
+  //   live: "https://theteestore.netlify.app/",
+  //   tag: "React, Node, MongoDB, Express",
+  //   image: "tee.png",
+  //   createdOn: "2019",
+  //   additionalTags: ["No longer supported"],
+  // },
+];

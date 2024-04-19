@@ -1,26 +1,37 @@
-import { ReactElement } from "react";
-import { Container } from "@chakra-ui/layout";
+"use client";
 
-import HeroSection from "../components/Landing/HeroSection";
-import Projects from "../components/Landing/Projects";
-import Tech from "../components/Landing/Tech";
-import Social from "../components/Landing/Social";
-import Layout from "../components/Layout";
+import { ReactLenis } from "@studio-freight/react-lenis";
 
-import { projects } from "../config/project";
-import TECH from "../config/tech";
+import Hero from "@/components/landing/hero";
+import Navbar from "@/components/landing/nav/landing-nav";
+import StickyNav from "@/components/landing/nav/sticky-nav";
+import Projects from "@/components/landing/project/projectsSection";
+import Tech from "@/components/landing/techSection";
+import Footer from "@/components/landing/footer";
+import CustomCursor from "@/components/custom-cursor";
+import ResumeSection from "@/components/landing/resume/resume-section";
 
-function Home(): ReactElement {
+export default function Home() {
   return (
-    <Layout withAnimation={false}>
-      <HeroSection />
-      <Container maxW="container.xl">
-        <Projects projects={[...projects]} />
-      </Container>
-      <Tech techs={[...TECH]} />
-      <Social />
-    </Layout>
+    <>
+      <ReactLenis
+        root
+        options={{
+          lerp: 0,
+          duration: 1,
+          smoothWheel: true,
+          wheelMultiplier: 1.3,
+        }}
+      >
+        <Navbar />
+        <Hero />
+        <StickyNav />
+        <Projects />
+        <Tech />
+        <ResumeSection />
+        <Footer />
+      </ReactLenis>
+      <CustomCursor />
+    </>
   );
 }
-
-export default Home;
