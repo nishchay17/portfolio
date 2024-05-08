@@ -5,7 +5,7 @@ async function call(meta: any) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "App-token": process.env.APP_TOKEN,
+      "App-token": process.env.APP_TOKEN!,
     },
     body: JSON.stringify({ namespace: "portfolio-viper", meta }),
   });
