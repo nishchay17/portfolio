@@ -45,7 +45,7 @@ function ResumeSection() {
             rel="noreferrer"
             href={process.env.NEXT_PUBLIC_RESUME ?? "#"}
           >
-            Download My Resume
+            View My Resume
           </Link>
         </Button>
       </div>
