@@ -1,7 +1,5 @@
 "use server";
 
-export const dynamic = "force-dynamic";
-
 async function call(meta: any) {
   return await fetch("https://tail-track.vercel.app/api/v1/analytics", {
     method: "POST",
