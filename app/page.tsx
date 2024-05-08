@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
 
 import Hero from "@/components/landing/hero";
@@ -10,8 +11,13 @@ import Tech from "@/components/landing/techSection";
 import Footer from "@/components/landing/footer";
 import CustomCursor from "@/components/custom-cursor";
 import ResumeSection from "@/components/landing/resume/resume-section";
+import track from "@/lib/tail-track";
 
 export default function Home() {
+  useEffect(() => {
+    track({ type: "visit-landing" });
+  }, []);
+
   return (
     <>
       <ReactLenis
