@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
   ],
   creator: "nishchay17",
-  metadataBase: new URL("https://www.nishchay17.com/"),
+  metadataBase: new URL("https://www.nishchay17.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
