@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import ResumeCard from "./resume-card";
 import { useIntersectionObserver } from "@/hooks/use-intersector";
 import { useNav } from "@/context/nav-context";
+import track from "@/lib/tail-track";
 
 function ResumeSection() {
   const { isIntersecting, ref } = useIntersectionObserver({
@@ -39,7 +40,12 @@ function ResumeSection() {
             }
           />
         </div>
-        <Button variant="cfa" className="mx-auto" asChild>
+        <Button
+          variant="cfa"
+          className="mx-auto"
+          asChild
+          onClick={() => track({ click: `resume` })}
+        >
           <Link
             target="_blank"
             rel="noreferrer"

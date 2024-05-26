@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { projects } from "@/config/project";
 import { Badge } from "@/components/ui/badge";
+import track from "@/lib/tail-track";
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const bagdeClass = {
@@ -25,7 +26,12 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         <div className="flex md:items-center justify-between gap-2 md:gap-8 my-2 md:my-4 flex-col md:flex-row">
           <p className="text-subheading leading-[105%]">{project.name}</p>
           <div className="flex items-center gap-2 lg:gap-4">
-            <Link href={project.github} target="_blank" rel="noreferrer">
+            <Link
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => track({ click: `${project.name}-github` })}
+            >
               <Button
                 className="px-0 group uppercase tracking-wider text-para-xm transition-all"
                 variant="link"
@@ -35,7 +41,12 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 <ArrowTopRightIcon className="ml-1 size-6 md:opacity-0 group-hover:opacity-100 transition-all" />
               </Button>
             </Link>
-            <Link href={project.live} target="_blank" rel="noreferrer">
+            <Link
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => track({ click: `${project.name}-live` })}
+            >
               <Button
                 className="px-0 group uppercase tracking-wider text-para-xm transition-all"
                 variant="link"
