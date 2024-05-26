@@ -1,8 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
+import { Suspense } from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
-import { useSearchParams } from "next/navigation";
 
 import Hero from "@/components/landing/hero";
 import Navbar from "@/components/landing/nav/landing-nav";
@@ -12,15 +9,9 @@ import Tech from "@/components/landing/techSection";
 import Footer from "@/components/landing/footer";
 import CustomCursor from "@/components/custom-cursor";
 import ResumeSection from "@/components/landing/resume/resume-section";
-import track from "@/lib/tail-track";
+import Track from "@/components/landing/track";
 
 export default function Home() {
-  const params = useSearchParams();
-
-  useEffect(() => {
-    track({ type: "visit-landing", ref: params.get("ref") ?? "" });
-  }, []);
-
   return (
     <>
       <ReactLenis
@@ -41,6 +32,9 @@ export default function Home() {
         <Footer />
       </ReactLenis>
       <CustomCursor />
+      <Suspense>
+        <Track />
+      </Suspense>
     </>
   );
 }
