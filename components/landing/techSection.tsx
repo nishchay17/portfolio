@@ -1,3 +1,5 @@
+"use client";
+
 import TECH from "@/config/tech";
 import { useNav } from "@/context/nav-context";
 import { useIntersectionObserver } from "@/hooks/use-intersector";

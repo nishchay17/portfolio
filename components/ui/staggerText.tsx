@@ -1,4 +1,4 @@
-"use cleint";
+"use client";
 
 import { useRef } from "react";
 import { motion, Variants } from "framer-motion";
