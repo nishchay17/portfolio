@@ -54,7 +54,7 @@ export default function Projects() {
       <div ref={ref}>
         <div
           id="projects"
-          className={"px-6 md:px-0 relative md:h-[calc(40vh*12)]"}
+          className={"px-5 md:px-0 relative md:h-[calc(40vh*12)]"}
           ref={targetRef}
         >
           <div className="md:sticky top-0 flex md:h-screen items-center overflow-hidden">
