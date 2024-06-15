@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "Nishchay",
   },
   description: "Portfolio made with Next JS | Nishchay17",
-  icons: ["/svg/logo.svg"],
+  icons: ["/svg/logo-new.svg"],
   keywords: ["Next.js", "React", "Portfolio", "Nishchay", "Nishchay17"],
   authors: [
     {
