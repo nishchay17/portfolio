@@ -42,7 +42,7 @@ function Navbar() {
             <h2 className="tracking-wider text-sm">Nishchay</h2>
           </div>
           <Link
-            href={"https://www.linkedin.com/in/nishchay-trivedi-61219978"}
+            href={"https://www.linkedin.com/in/nishchay17"}
             target="_blank"
             rel="noopener noreferrer"
             prefetch={false}
