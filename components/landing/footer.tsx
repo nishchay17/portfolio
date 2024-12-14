@@ -116,7 +116,7 @@ function Footer() {
             </Link>
             <Link
               className="border border-indigo-800 hover:bg-indigo-700 transition-colors p-3 rounded-full"
-              href="https://www.linkedin.com/in/nishchay-trivedi-61219978"
+              href="https://www.linkedin.com/in/nishchay17"
               aria-label="Linkedin"
               target="_blank"
               rel="noopener noreferrer"
