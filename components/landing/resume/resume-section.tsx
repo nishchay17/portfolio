@@ -46,16 +46,9 @@ function ResumeSection() {
           disabled
           variant="cfa"
           className="mx-auto cursor-not-allowed"
-          asChild
           onClick={() => track({ click: `resume` })}
         >
-          <Link
-            target="_blank"
-            rel="noreferrer"
-            href={process.env.NEXT_PUBLIC_RESUME ?? "#"}
-          >
-            View My Resume
-          </Link>
+          View My Resume
         </Button>
       </div>
     </section>
