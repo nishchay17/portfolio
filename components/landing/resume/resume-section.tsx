@@ -43,8 +43,9 @@ function ResumeSection() {
           />
         </div>
         <Button
+          disabled
           variant="cfa"
-          className="mx-auto"
+          className="mx-auto cursor-not-allowed"
           asChild
           onClick={() => track({ click: `resume` })}
         >
