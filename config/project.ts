@@ -45,28 +45,28 @@ export const projects = [
     image: "team-collab.png",
     createdOn: "2023",
   },
-  {
-    id: 3,
-    name: "Url Shortener",
-    description:
-      "Mock website for a url shortener service. Used shrtco.de's API to shorten the given URL and persisted in the local storage.",
-    github: "https://github.com/nishchay17/Shortly",
-    live: "https://shortlytif.netlify.app/",
-    tag: "React",
-    image: "url.png",
-    createdOn: "2019",
-  },
-  {
-    id: 4,
-    name: "CDF (CLI)",
-    description:
-      "Generate files with boilerplate code, for competitive programmers. 1000+ Downloads on NPM.",
-    github: "https://github.com/nishchay17/dirMaker",
-    live: "https://www.npmjs.com/package/@nishchay17/cdf",
-    tag: "Node, CLI",
-    image: "cdn.png",
-    createdOn: "2020",
-  },
+  // {
+  //   id: 3,
+  //   name: "Url Shortener",
+  //   description:
+  //     "Mock website for a url shortener service. Used shrtco.de's API to shorten the given URL and persisted in the local storage.",
+  //   github: "https://github.com/nishchay17/Shortly",
+  //   live: "https://shortlytif.netlify.app/",
+  //   tag: "React",
+  //   image: "url.png",
+  //   createdOn: "2019",
+  // },
+  // {
+  //   id: 4,
+  //   name: "CDF (CLI)",
+  //   description:
+  //     "Generate files with boilerplate code, for competitive programmers. 1000+ Downloads on NPM.",
+  //   github: "https://github.com/nishchay17/dirMaker",
+  //   live: "https://www.npmjs.com/package/@nishchay17/cdf",
+  //   tag: "Node, CLI",
+  //   image: "cdn.png",
+  //   createdOn: "2020",
+  // },
   // {
   //   id: 2,
   //   name: "E-commerce",

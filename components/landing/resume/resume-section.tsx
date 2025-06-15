@@ -32,13 +32,13 @@ function ResumeSection() {
           <div
             className={
               "absolute inset-0 -z-10 bg-slate-100 rounded-lg shadow-lg" +
-              " transition-all duration-500 md:group-hover:rotate-3 md:-rotate-3"
+              " transition-all duration-500 md:group-hover:rotate-3 md:-rotate-3 border-2 border-slate-300"
             }
           />
           <div
             className={
               "absolute inset-0 -z-20 bg-slate-200 rounded-lg" +
-              " transition-all md:group-hover:rotate-1 md:-rotate-1"
+              " transition-all md:group-hover:rotate-1 md:-rotate-1 border-2 border-slate-300"
             }
           />
         </div>
