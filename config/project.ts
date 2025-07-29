@@ -25,8 +25,7 @@ export const projects = [
   {
     id: 5,
     name: "Dev Planet Blog",
-    description:
-      "Collaborate with Team with team collab. Assign and monitor tasks and share files with the team.",
+    description: "SSG Blog platform SEO friendly with MDX support",
     github: "https://github.com/nishchay17/planet-blog",
     live: "https://planet-blog.vercel.app/",
     tag: "Next, Tailwind, Typescript, Next auth, Contentlayer, MDX",
